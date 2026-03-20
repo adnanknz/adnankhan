@@ -1,36 +1,56 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, PieChart, Layers, TrendingUp, Database, Zap, BarChart3 } from "lucide-react";
+import {
+  ArrowRight,
+  PieChart,
+  Layers,
+  TrendingUp,
+  Database,
+  Zap,
+  BarChart3,
+  Megaphone,
+  Globe,
+  Settings,
+} from "lucide-react";
 
 const services = [
   {
-    icon: PieChart,
-    title: "Marketing Mix Modelling",
-    company: "via Stitch Predict",
+    icon: Zap,
+    title: "Digital Transformation",
     description:
-      "Privacy-first marketing measurement through our SaaS MMM platform. Quantify the incremental impact of each marketing channel, optimise budget allocation, and forecast ROI across scenarios. Built because sophisticated measurement shouldn't require a multi-million-dollar budget.",
+      "Helping brands modernise how they acquire, engage, and retain customers. From strategy through execution, I work across your entire digital ecosystem to drive commercial growth: channel architecture, technology selection, team capability building, and change management. This is about fundamentally upgrading how your organisation operates, not just adding tools.",
+    tags: ["Strategy", "Change Management", "Growth"],
   },
   {
     icon: Database,
-    title: "Customer Data Platforms",
+    title: "Customer Data Infrastructure",
     company: "Primary Tealium Partner NZ",
     description:
-      "As New Zealand's primary certified Tealium deployment partner, we architect, implement, and integrate CDPs that unify your customer data across every touchpoint. From vendor selection through deployment and ongoing optimisation.",
+      "Your customer data is your most valuable asset, but only if it's connected. As New Zealand's primary certified Tealium deployment partner, I architect and implement customer data platforms that unify your first-party data across every touchpoint. From CDP vendor selection to server-side tracking, identity resolution, and audience activation.",
+    tags: ["Tealium", "CDPs", "First-Party Data", "Server-Side Tracking"],
   },
   {
     icon: Layers,
-    title: "MarTech Stack Strategy",
-    company: "via Stitch",
+    title: "MarTech Stack Consulting",
     description:
-      "Audit, architect, and integrate your marketing technology stack. We work across CDPs, CRMs, analytics platforms, automation tools, and media systems to create a unified, efficient martech ecosystem.",
+      "Most brands are using 10% of the tools they're paying for and missing 50% of the tools they actually need. I audit, architect, and integrate marketing technology stacks end to end: CRMs, automation platforms, analytics tools, CDPs, and everything in between. The goal is a connected ecosystem where data flows and teams can actually use what they have.",
+    tags: ["Integration", "CRM", "Automation", "Analytics"],
   },
   {
-    icon: TrendingUp,
-    title: "Performance & Attribution",
-    company: "via Stitch",
+    icon: Megaphone,
+    title: "Media & Advertising Strategy",
     description:
-      "Advanced attribution modelling, customer lifetime value analysis, first-party data strategy, and server-side tracking implementation. Privacy-first measurement for the post-cookie era.",
+      "Paid social, programmatic, search, and performance media, planned and executed with the same data-driven rigour that won two Gold Effie Awards and the Supreme TVNZ Marketing Award. I don't just buy media. I build the strategy, measurement framework, and creative approach that makes every dollar work harder.",
+    tags: ["Paid Media", "Social", "Programmatic", "Performance"],
+  },
+  {
+    icon: BarChart3,
+    title: "Marketing Mix Modelling",
+    company: "via Stitch Predict",
+    description:
+      "Our SaaS MMM platform quantifies the incremental impact of each marketing channel so you can optimise budget allocation with confidence. Privacy-first, no cookies required. Built because sophisticated marketing measurement shouldn't need a multi-million-dollar budget.",
+    tags: ["Stitch Predict", "MMM", "Attribution", "Privacy-First"],
   },
 ];
 
@@ -78,6 +98,33 @@ const results = [
   },
 ];
 
+const transformationAreas = [
+  {
+    icon: Globe,
+    title: "Assess",
+    description:
+      "Audit your current digital ecosystem: technology stack, data flows, media performance, team capabilities, and vendor relationships. Identify the gaps between where you are and where you need to be.",
+  },
+  {
+    icon: Settings,
+    title: "Architect",
+    description:
+      "Design a connected strategy across media, technology, and data. Select the right platforms, define integration architecture, and build a phased roadmap your team can actually execute.",
+  },
+  {
+    icon: Zap,
+    title: "Activate",
+    description:
+      "Implement, integrate, and launch. From CDP deployment and media campaign execution to martech configuration and team training. Hands-on delivery, not just slide decks.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Optimise",
+    description:
+      "Continuous improvement through marketing mix modelling, performance analytics, A/B testing frameworks, and regular technology reviews. Measure what matters and double down on what works.",
+  },
+];
+
 const MarTech = () => (
   <Layout>
     {/* Hero */}
@@ -85,14 +132,13 @@ const MarTech = () => (
       <div className="container mx-auto max-w-4xl">
         <p className="text-sm uppercase tracking-widest text-accent mb-4">Services</p>
         <h1 className="font-display text-display-md lg:text-display-lg font-semibold mb-6">
-          MarTech, CDPs & Marketing Mix Modelling
+          Media, Technology & Digital Transformation
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-          Data-driven marketing strategy through{" "}
-          <strong className="text-foreground">Stitch</strong> (consultancy) and{" "}
-          <strong className="text-foreground">Stitch Predict</strong> (SaaS MMM platform). We help
-          CMOs and marketing leaders make confident investment decisions backed by rigorous
-          measurement.
+          Through <strong className="text-foreground">Stitch</strong> (agency + consultancy) and{" "}
+          <strong className="text-foreground">Stitch Predict</strong> (SaaS MMM platform), I help
+          brands build the digital infrastructure, media strategies, and data capabilities that
+          drive real commercial growth.
         </p>
         <p className="text-sm text-muted-foreground max-w-2xl">
           New Zealand's primary certified Tealium deployment partner. Multiple Effie Award and TVNZ
@@ -118,63 +164,62 @@ const MarTech = () => (
       </div>
     </section>
 
-    {/* Services */}
+    {/* How I Work */}
     <section className="py-24 px-6 lg:px-8">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="font-display text-display-sm font-semibold mb-12">What we do</h2>
-        <div className="space-y-12 mb-24">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="flex flex-col md:flex-row gap-6 md:gap-10 py-8 border-b border-border"
-            >
-              <s.icon className="text-accent shrink-0" size={32} />
-              <div>
-                <h3 className="font-display text-xl font-semibold mb-1">{s.title}</h3>
-                <p className="text-xs text-accent font-medium mb-3">{s.company}</p>
-                <p className="text-muted-foreground leading-relaxed">{s.description}</p>
-              </div>
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="font-display text-display-sm font-semibold mb-4 text-center">
+          How I work
+        </h2>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+          Whether it's a full digital transformation or a targeted project, the approach follows
+          the same discipline.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {transformationAreas.map((area) => (
+            <div key={area.title} className="text-center">
+              <area.icon className="text-accent mx-auto mb-4" size={28} />
+              <h3 className="font-display text-lg font-semibold mb-2">{area.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {area.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* Stitch Predict Spotlight */}
+    {/* Services Detail */}
     <section className="py-24 px-6 lg:px-8 bg-muted/40">
       <div className="container mx-auto max-w-4xl">
-        <div className="flex items-center gap-3 mb-8">
-          <BarChart3 className="text-accent" size={24} />
-          <h2 className="font-display text-display-sm font-semibold">Stitch Predict</h2>
-        </div>
-        <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
-          Our SaaS marketing mix modelling platform democratises sophisticated marketing
-          measurement. We built Stitch Predict to answer a simple question: why should
-          privacy-compliant marketing measurement only be accessible to businesses with
-          multi-million-dollar budgets?
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="bg-card p-6 rounded-lg border border-border">
-            <Zap className="text-accent mb-3" size={20} />
-            <h3 className="font-display text-sm font-semibold mb-1">Machine Learning Driven</h3>
-            <p className="text-xs text-muted-foreground">
-              Causality identification and incrementality forecasting
-            </p>
-          </div>
-          <div className="bg-card p-6 rounded-lg border border-border">
-            <Zap className="text-accent mb-3" size={20} />
-            <h3 className="font-display text-sm font-semibold mb-1">Privacy-First</h3>
-            <p className="text-xs text-muted-foreground">
-              No cookies or PII required. Built for the post-cookie era
-            </p>
-          </div>
-          <div className="bg-card p-6 rounded-lg border border-border">
-            <Zap className="text-accent mb-3" size={20} />
-            <h3 className="font-display text-sm font-semibold mb-1">Accessible Pricing</h3>
-            <p className="text-xs text-muted-foreground">
-              Sophisticated measurement for businesses of all sizes
-            </p>
-          </div>
+        <h2 className="font-display text-display-sm font-semibold mb-16">Service areas</h2>
+        <div className="space-y-12">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="bg-card border border-border p-8 lg:p-10 rounded-lg"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <s.icon className="text-accent shrink-0 mt-1" size={28} />
+                <div>
+                  <h3 className="font-display text-xl font-semibold">{s.title}</h3>
+                  {s.company && (
+                    <p className="text-xs text-accent font-medium mt-1">{s.company}</p>
+                  )}
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-4">{s.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {s.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1 rounded-full bg-muted text-muted-foreground"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -202,11 +247,11 @@ const MarTech = () => (
     <section className="py-24 px-6 lg:px-8 bg-muted/40">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="font-display text-display-sm font-semibold mb-6">
-          Improve your marketing measurement
+          Let's grow your brand
         </h2>
         <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
-          Whether you need a full martech transformation, a CDP implementation, or want to explore
-          marketing mix modelling, let's find the right starting point.
+          Whether you need a full digital transformation, a CDP implementation, a media strategy
+          overhaul, or just a clear-eyed assessment of where you stand, let's talk.
         </p>
         <Button variant="hero" size="lg" asChild>
           <Link to="/contact">
