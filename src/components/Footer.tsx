@@ -7,8 +7,9 @@ const Footer = () => (
         <div>
           <h3 className="font-display text-lg font-semibold mb-4">Adnan Khan</h3>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-            AI consulting for law firms. MarTech, CDPs, and marketing mix modelling for brands.
-            Co-Founder of Stitch and Stitch Predict. Based in Auckland, NZ.
+            AI consulting for law firms. Media, advertising, martech, customer data
+            infrastructure, and digital transformation for brands. Co-Founder of Stitch and Stitch
+            Predict. Based in Auckland, NZ.
           </p>
         </div>
         <div>
