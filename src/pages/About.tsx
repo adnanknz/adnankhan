@@ -89,34 +89,39 @@ const About = () => (
           <div className="lg:col-span-3 space-y-6 text-muted-foreground leading-relaxed">
             <p>
               With 16+ years of experience spanning Meta, Microsoft, and two companies I
-              co-founded, I work at the intersection of AI, marketing technology, and data strategy.
-              My mission is to help organisations measure their marketing properly and adopt AI in
-              ways that create real commercial outcomes.
+              co-founded, I help brands transform how they reach, engage, and grow their customers
+              through media, technology, and AI. My work covers the full spectrum: advertising and
+              media strategy, customer data infrastructure, martech architecture, digital
+              transformation, and marketing measurement.
             </p>
             <p>
               My career started in media planning at Initiative, before joining Microsoft Australia
               as a technical account manager. In 2009, I became one of the first five Facebook
               employees in Asia-Pacific and one of the first 200 sales employees globally. Over five
               years I progressed from account planner to Country Manager for New Zealand, opening
-              Facebook's Auckland office and building operations from the ground up.
+              Facebook's Auckland office and building operations from the ground up. That experience
+              gave me a deep understanding of how media, advertising, and technology work together
+              at scale.
             </p>
             <p>
-              In 2014 I co-founded krunch.co, where we built New Zealand's first people-based
-              attribution measurement product and produced the world's first marketing automation and
-              BI integration case study for Cisco Global. In 2019 I co-founded{" "}
-              <strong className="text-foreground">Stitch</strong>, a marketing technology
-              consultancy now serving Fortune 500 clients across multiple continents and recognised
-              as one of NZ's "Globally Brilliant Agencies."
+              In 2014 I co-founded krunch.co, where we built digital transformation programmes for
+              global brands like Cisco, Comvita, BNZ, Bayleys, and Hyundai. We developed New
+              Zealand's first people-based attribution product and produced the world's first
+              marketing automation and BI integration case study for Cisco Global. In 2019 I
+              co-founded <strong className="text-foreground">Stitch</strong>, which has evolved from
+              a media agency and consultancy into a media agency, consultancy, and software company,
+              now serving Fortune 500 clients across multiple continents and recognised as one of
+              NZ's "Globally Brilliant Agencies."
             </p>
             <p>
               In 2023 I launched{" "}
               <strong className="text-foreground">Stitch Predict</strong>, a SaaS marketing mix
-              modelling platform, because I believe sophisticated, privacy-compliant marketing
-              measurement shouldn't only be accessible to those with multi-million-dollar budgets.
+              modelling platform, because I believe sophisticated marketing measurement shouldn't
+              only be accessible to those with multi-million-dollar budgets.
             </p>
             <p>
-              Today I also consult with legal firms on AI and digital technology, helping them
-              navigate adoption with practical, compliance-aligned approaches. I chair the Marketing
+              I also consult with legal firms on AI and digital technology, helping them navigate
+              adoption with practical, compliance-aligned approaches. I chair the Marketing
               Association NZ's Digital Special Interest Group and lead IAB New Zealand's AI Working
               Group.
             </p>
