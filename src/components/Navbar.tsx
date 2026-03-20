@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-6 lg:px-8">
         <Link to="/" className="font-display text-xl font-semibold tracking-tight text-foreground">
-          Consultant
+          Adnan Khan
         </Link>
 
         {/* Desktop */}
@@ -30,7 +30,9 @@ const Navbar = () => {
               key={link.href}
               to={link.href}
               className={`text-sm tracking-wide transition-colors hover:text-accent ${
-                location.pathname === link.href ? "text-accent font-medium" : "text-muted-foreground"
+                location.pathname === link.href
+                  ? "text-accent font-medium"
+                  : "text-muted-foreground"
               }`}
             >
               {link.label}
@@ -58,7 +60,9 @@ const Navbar = () => {
                 to={link.href}
                 onClick={() => setOpen(false)}
                 className={`text-base transition-colors hover:text-accent ${
-                  location.pathname === link.href ? "text-accent font-medium" : "text-muted-foreground"
+                  location.pathname === link.href
+                    ? "text-accent font-medium"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.label}
