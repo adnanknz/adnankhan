@@ -15,9 +15,7 @@ const Contact = () => {
     e.preventDefault();
     setSending(true);
 
-    // TODO: Replace with your Web3Forms access key
-    // Sign up at https://web3forms.com to get a free access key (250 submissions/month)
-    const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+    const WEB3FORMS_KEY = "1b6b76cb-2e33-43e6-9c08-77f081fdf043";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
