@@ -1,12 +1,50 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, BarChart3, Scale, Database, Award, Quote } from "lucide-react";
+import {
+  ArrowRight,
+  Brain,
+  BarChart3,
+  Scale,
+  Database,
+  Quote,
+  Megaphone,
+  Layers,
+  Zap,
+} from "lucide-react";
 
 const services = [
   {
+    icon: Zap,
+    title: "Digital Transformation",
+    description:
+      "End-to-end transformation strategy for brands ready to modernise how they reach, engage, and convert customers across every channel.",
+    href: "/martech",
+  },
+  {
+    icon: Database,
+    title: "Customer Data & CDPs",
+    description:
+      "Tealium-certified CDP implementation, first-party data strategy, and customer data infrastructure that unifies your entire tech ecosystem.",
+    href: "/martech",
+  },
+  {
+    icon: Layers,
+    title: "MarTech & Integration",
+    description:
+      "Audit, architect, and connect your marketing technology stack. From CRMs and automation platforms to analytics and media systems.",
+    href: "/martech",
+  },
+  {
+    icon: Megaphone,
+    title: "Media & Advertising",
+    description:
+      "Performance media strategy, paid social, programmatic, and campaign execution backed by award-winning creative and data-driven optimisation.",
+    href: "/martech",
+  },
+  {
     icon: Scale,
-    title: "AI Consulting for Legal",
+    title: "AI for Legal",
     description:
       "Helping NZ law firms navigate AI adoption with practical strategy, implementation support, and compliance-aligned solutions.",
     href: "/legal-ai",
@@ -15,21 +53,7 @@ const services = [
     icon: BarChart3,
     title: "Marketing Mix Modelling",
     description:
-      "Privacy-first measurement through Stitch Predict, our SaaS MMM platform making sophisticated marketing analytics accessible to all.",
-    href: "/martech",
-  },
-  {
-    icon: Database,
-    title: "CDPs & MarTech Strategy",
-    description:
-      "Customer data platforms, martech stack architecture, and integration consulting. Primary Tealium deployment partner in New Zealand.",
-    href: "/martech",
-  },
-  {
-    icon: Brain,
-    title: "Digital Transformation",
-    description:
-      "End-to-end digital transformation strategy for brands and enterprises, from assessment through implementation and change management.",
+      "Privacy-first measurement through Stitch Predict, making sophisticated marketing analytics accessible to businesses of all sizes.",
     href: "/martech",
   },
 ];
@@ -102,17 +126,17 @@ const Index = () => (
     <section className="py-24 lg:py-40 px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">
         <h1 className="font-display text-display-md lg:text-display-lg font-semibold text-foreground mb-6 animate-fade-in">
-          Making marketing measurable
+          Helping brands grow through
           <br />
-          <span className="text-accent">and AI practical.</span>
+          <span className="text-accent">media, technology, and AI.</span>
         </h1>
         <p
           className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 animate-fade-in"
           style={{ animationDelay: "0.15s" }}
         >
-          From founding Facebook's NZ operations to building Effie Award-winning strategies, I help
-          law firms adopt AI and brands measure what matters. Co-Founder of Stitch and Stitch
-          Predict, based in Auckland.
+          I build the digital infrastructure, media strategies, and data capabilities that drive
+          real commercial growth. Co-Founder of Stitch and Stitch Predict. Ex-Meta. Effie Award
+          winner. Based in Auckland.
         </p>
         <div
           className="flex flex-col sm:flex-row gap-4 animate-fade-in"
@@ -151,10 +175,24 @@ const Index = () => (
           Who I work with
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          Two audiences, one mission: helping organisations use AI and data to drive measurable
-          outcomes.
+          Two audiences, one approach: combining media expertise, technology infrastructure, and AI
+          to create commercial outcomes.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Link
+            to="/martech"
+            className="group bg-card p-10 rounded-lg border border-border hover:border-accent transition-colors"
+          >
+            <Zap className="text-accent mb-4" size={32} />
+            <h3 className="font-display text-xl font-semibold mb-3">For Brands & CMOs</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              Digital transformation, media and advertising strategy, customer data infrastructure,
+              martech integration, and marketing mix modelling through Stitch and Stitch Predict.
+            </p>
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:gap-2 transition-all">
+              Learn more <ArrowRight size={14} />
+            </span>
+          </Link>
           <Link
             to="/legal-ai"
             className="group bg-card p-10 rounded-lg border border-border hover:border-accent transition-colors"
@@ -164,20 +202,6 @@ const Index = () => (
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               AI readiness assessments, implementation strategy, compliance-aligned solutions, and
               training for legal teams navigating the AI transition.
-            </p>
-            <span className="inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:gap-2 transition-all">
-              Learn more <ArrowRight size={14} />
-            </span>
-          </Link>
-          <Link
-            to="/martech"
-            className="group bg-card p-10 rounded-lg border border-border hover:border-accent transition-colors"
-          >
-            <BarChart3 className="text-accent mb-4" size={32} />
-            <h3 className="font-display text-xl font-semibold mb-3">For Brands & CMOs</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Marketing mix modelling, CDP implementation, martech strategy, and performance
-              analytics through Stitch and Stitch Predict.
             </p>
             <span className="inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:gap-2 transition-all">
               Learn more <ArrowRight size={14} />
@@ -193,7 +217,7 @@ const Index = () => (
         <h2 className="font-display text-display-sm lg:text-display-md font-semibold text-foreground mb-16 text-center">
           What I do
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s) => (
             <Link
               key={s.title}
@@ -201,7 +225,7 @@ const Index = () => (
               className="group bg-card p-8 rounded-lg border border-border hover:border-accent transition-colors"
             >
               <s.icon className="text-accent mb-4" size={28} />
-              <h3 className="font-display text-xl font-semibold mb-3">{s.title}</h3>
+              <h3 className="font-display text-lg font-semibold mb-3">{s.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
               <span className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent group-hover:gap-2 transition-all">
                 Learn more <ArrowRight size={14} />
@@ -324,8 +348,8 @@ const Index = () => (
           Ready to talk?
         </h2>
         <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
-          Whether you're a law firm exploring AI or a brand looking to measure marketing impact,
-          let's find the right approach for your organisation.
+          Whether you're a law firm exploring AI or a brand ready to transform how you reach and
+          engage customers, let's find the right starting point.
         </p>
         <Button variant="hero" size="lg" asChild>
           <Link to="/contact">
