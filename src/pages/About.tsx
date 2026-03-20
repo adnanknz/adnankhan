@@ -122,10 +122,14 @@ const About = () => (
             </p>
           </div>
           <div className="lg:col-span-2">
-            {/* TODO: Replace with actual headshot */}
-            <div className="aspect-[3/4] bg-muted rounded-lg flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Photo</span>
-            </div>
+            <img
+              src="/adnan-khan-headshot.jpg"
+              alt="Adnan Khan - AI & MarTech Consultant, Auckland NZ"
+              className="aspect-[3/4] object-cover object-top rounded-lg w-full"
+              width={400}
+              height={533}
+              loading="eager"
+            />
             <div className="mt-8">
               <h3 className="font-display text-lg font-semibold mb-4">Education</h3>
               <div className="flex items-start gap-3">
