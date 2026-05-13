@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Work", href: "#work" },
-  { label: "Thinking", href: "#thinking" },
-  { label: "About", href: "#about" },
-  { label: "Speaking", href: "#speaking" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", to: "/work" },
+  { label: "Services", to: "/services" },
+  { label: "About", to: "/about" },
+  { label: "Thinking", to: "/thinking" },
+  { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -20,6 +21,8 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => { setOpen(false); }, [pathname]);
 
   return (
     <>
@@ -39,15 +42,19 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-10" aria-label="Primary">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-[13px] tracking-[0.06em] uppercase font-medium text-ink link-underline"
+              <NavLink
+                key={l.to}
+                to={l.to}
+                className={({ isActive }) =>
+                  `text-[13px] tracking-[0.06em] uppercase font-medium link-underline ${
+                    isActive ? "text-oxblood" : "text-ink"
+                  }`
+                }
               >
                 {l.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
@@ -74,17 +81,17 @@ const Navbar = () => {
               <X size={28} />
             </button>
           </div>
-          <nav className="flex-1 flex flex-col justify-center gap-6 px-8">
+          <nav className="flex-1 flex flex-col justify-center gap-6 px-8" aria-label="Mobile">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <Link
+                key={l.to}
+                to={l.to}
                 onClick={() => setOpen(false)}
                 className="font-serif text-5xl font-bold"
                 style={{ fontVariationSettings: '"opsz" 96' }}
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <p className="mono text-paper/60 px-8 pb-8">AUCKLAND -36.85°, 174.76°</p>
