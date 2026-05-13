@@ -1,0 +1,15 @@
+export const SITE = {
+  url: "https://adnan.co.nz",
+  name: "Adnan Khan",
+  email: "adnan.khan@me.com",
+  phone: "+64 27 513 0110",
+  phoneTel: "+64275130110",
+  city: "Auckland",
+  country: "New Zealand",
+  linkedin: "https://www.linkedin.com/in/adnan2/",
+  stitch: "https://stitchtech.co",
+  stitchPredict: "https://stitchpredict.com",
+  imanz: "https://www.imanz.co.nz/our-agencies/stitch",
+  maHub: "https://marketing.org.nz/resource-hub/author/adnan-khan",
+  aboutMe: "https://about.me/adnank",
+};
