@@ -6,15 +6,54 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Linkedin, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be under 255 characters"),
+  subject: z.string().trim().min(1, "Subject is required").max(150, "Subject must be under 150 characters"),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be under 2000 characters"),
+});
 
 const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [sending, setSending] = useState(false);
+  const [botcheck, setBotcheck] = useState("");
+  const [lastSubmit, setLastSubmit] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Basic client-side throttle to deter rapid repeat submissions
+    const now = Date.now();
+    if (now - lastSubmit < 5000) {
+      toast({
+        title: "Please wait",
+        description: "You can only send one message every few seconds.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Honeypot — real users won't fill this hidden field
+    if (botcheck) {
+      return;
+    }
+
+    const parsed = contactSchema.safeParse(form);
+    if (!parsed.success) {
+      const firstError = parsed.error.issues[0]?.message ?? "Please check your input";
+      toast({
+        title: "Invalid input",
+        description: firstError,
+        variant: "destructive",
+      });
+      return;
+    }
+
     setSending(true);
+    setLastSubmit(now);
 
     const WEB3FORMS_KEY = "1b6b76cb-2e33-43e6-9c08-77f081fdf043";
 
@@ -24,10 +63,11 @@ const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          message: form.message,
+          name: parsed.data.name,
+          email: parsed.data.email,
+          subject: parsed.data.subject,
+          message: parsed.data.message,
+          botcheck: "",
           from_name: "adnan.co.nz Contact Form",
         }),
       });
@@ -81,6 +121,7 @@ const Contact = () => {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       required
+                      maxLength={100}
                       placeholder="Your name"
                     />
                   </div>
@@ -91,6 +132,7 @@ const Contact = () => {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       required
+                      maxLength={255}
                       placeholder="you@company.com"
                     />
                   </div>
@@ -101,6 +143,7 @@ const Contact = () => {
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     required
+                    maxLength={150}
                     placeholder="How can I help?"
                   />
                 </div>
@@ -110,10 +153,22 @@ const Contact = () => {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     required
+                    maxLength={2000}
                     rows={5}
                     placeholder="Tell me about your project or challenge..."
                   />
                 </div>
+                {/* Honeypot field — hidden from real users, bots will fill it */}
+                <input
+                  type="text"
+                  name="botcheck"
+                  value={botcheck}
+                  onChange={(e) => setBotcheck(e.target.value)}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
                 <Button variant="hero" size="lg" type="submit" disabled={sending}>
                   {sending ? "Sending..." : "Send message"} <ArrowRight size={16} />
                 </Button>
