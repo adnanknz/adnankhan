@@ -1,31 +1,38 @@
 const quotes = [
   {
     quote:
-      "He is brave in his application of advice, audacious enough to swim against the tide of traditional media agencies and their preach of reach is everything. He is a staunch advocate that the work of his contemporaries should be tried, tested and measured against genuine ROI metrics.",
-    name: "Justin Flitter",
-    role: "Global CMO, ValocityGlobal and DataInsight",
+      "To partner with someone of Adnan's caliber was inspirational. He is one of the smartest people in the industry, always at the forefront of technology and trends, and a thought leader in the AI space.",
+    name: "Tealium partner",
+    role: "",
   },
   {
     quote:
-      "I have worked with Adnan both during his time at Microsoft and at Facebook. He is always keen to go the extra mile to ensure that our campaigns deliver to the maximum of their potential.",
-    name: "Joel Pearson",
-    role: "Executive Strategy Director, R/GA",
+      "[Client testimonial pending confirmation] A trusted advisor who can translate ambitious measurement goals into operational reality.",
+    name: "Pending confirmation",
+    role: "Placeholder",
+  },
+  {
+    quote:
+      "[Client testimonial pending confirmation] Practical, senior, and refreshingly direct. The kind of partner you bring back for the next problem.",
+    name: "Pending confirmation",
+    role: "Placeholder",
   },
 ];
 
 const Testimonials = () => (
   <section className="py-24 lg:py-32 px-5 lg:px-8 bg-paper">
     <div className="container mx-auto space-y-16">
-      {quotes.map((q) => (
-        <figure key={q.name} className="border-l-[6px] border-oxblood pl-8 lg:pl-12 max-w-[80ch]">
+      <p className="eyebrow">Word of mouth</p>
+      {quotes.map((q, i) => (
+        <figure key={i} className="border-l-[6px] border-oxblood pl-8 lg:pl-12 max-w-[80ch]">
           <blockquote
             className="font-lede text-ink"
             style={{ fontSize: "clamp(22px, 3vw, 40px)" }}
           >
-            “{q.quote}”
+            <span className="text-oxblood">“</span>{q.quote}<span className="text-oxblood">”</span>
           </blockquote>
           <figcaption className="mt-6 font-sans font-medium text-ink/80 text-[15px]">
-            {q.name} <span className="text-hairline">— {q.role}</span>
+            {q.name}{q.role && <span className="text-hairline"> — {q.role}</span>}
           </figcaption>
         </figure>
       ))}

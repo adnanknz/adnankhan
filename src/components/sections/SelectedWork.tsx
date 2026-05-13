@@ -1,33 +1,5 @@
-const cases = [
-  {
-    n: "01",
-    title: "Turners Cars: rebuilding a brand on data and storytelling.",
-    outcomes: [
-      "Triple win at TVNZ Marketing Awards 2022",
-      "Two Gold Effies",
-      "5.3× lead volume",
-      "68% drop in cost per lead",
-    ],
-  },
-  {
-    n: "02",
-    title: "AA Smartfuel: a drive-in cinema in eight days.",
-    outcomes: [
-      "8× return on ad spend",
-      "8,000 tickets sold in a fortnight",
-      "Kept partners trading through COVID",
-    ],
-  },
-  {
-    n: "03",
-    title: "Comvita: marketing automation, global lift.",
-    outcomes: [
-      "480% increase in new lead conversion in six months",
-      "255% uplift in average sale value on nurture",
-      "Marketo became one of the highest converting channels",
-    ],
-  },
-];
+import { Link } from "react-router-dom";
+import { caseStudies } from "@/data/caseStudies";
 
 const SelectedWork = () => (
   <section id="work" className="py-24 lg:py-40 px-5 lg:px-8 bg-paper">
@@ -43,22 +15,32 @@ const SelectedWork = () => (
       </div>
 
       <div className="space-y-24">
-        {cases.map((c) => (
+        {caseStudies.map((c, i) => (
           <article
-            key={c.n}
-            className="grid grid-cols-12 gap-x-6 gap-y-6 group hover:-translate-y-0.5 transition-transform duration-300"
+            key={c.slug}
+            className="grid grid-cols-12 gap-x-6 gap-y-6 group"
           >
-            <p className="mono col-span-12 lg:col-span-1">{c.n}</p>
-            <h3
-              className="col-span-12 lg:col-span-7 font-serif font-bold text-ink"
-              style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
-            >
-              {c.title}
-            </h3>
-            <ul className="col-span-12 lg:col-span-4 space-y-2">
-              {c.outcomes.map((o) => (
-                <li key={o} className="text-ink/80 text-[15px] leading-snug border-b border-hairline/60 pb-2">
-                  {o}
+            <p className="mono col-span-12 lg:col-span-1">{String(i + 1).padStart(2, "0")}</p>
+            <div className="col-span-12 lg:col-span-7">
+              <p className="eyebrow mb-3">{c.client}</p>
+              <h3
+                className="font-serif font-bold text-ink"
+                style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
+              >
+                {c.headline}
+              </h3>
+              <p className="mt-6 text-ink/80 text-[16px] leading-relaxed max-w-[58ch]">{c.body}</p>
+              <Link
+                to={`/work/${c.slug}`}
+                className="mt-8 inline-flex items-center gap-2 link-underline text-oxblood font-medium text-[15px]"
+              >
+                Read the case study <span aria-hidden>→</span>
+              </Link>
+            </div>
+            <ul className="col-span-12 lg:col-span-4 space-y-2 self-start">
+              {c.metrics.map((m) => (
+                <li key={m} className="text-ink/85 text-[15px] leading-snug border-b border-hairline/60 pb-2">
+                  {m}
                 </li>
               ))}
             </ul>

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SITE } from "@/data/site";
 
 const SiteFooter = () => {
   const wordmark = useRef<HTMLDivElement>(null);
@@ -20,33 +22,63 @@ const SiteFooter = () => {
     return () => mm.revert();
   }, []);
 
+  const work = [
+    ["Home", "/"],
+    ["Work", "/work"],
+    ["Services", "/services"],
+    ["Thinking", "/thinking"],
+    ["Contact", "/contact"],
+  ] as const;
+
+  const companies = [
+    ["Stitch", SITE.stitch],
+    ["Stitch Predict", SITE.stitchPredict],
+  ] as const;
+
+  const elsewhere = [
+    ["LinkedIn", SITE.linkedin],
+    ["IMANZ profile", SITE.imanz],
+    ["MA author hub", SITE.maHub],
+    ["About.me", SITE.aboutMe],
+  ] as const;
+
   return (
-    <footer className="hairline-t bg-paper relative overflow-hidden">
-      <div className="container mx-auto px-5 lg:px-8 pt-16 pb-8 grid grid-cols-2 lg:grid-cols-3 gap-10">
+    <footer className="hairline-t bg-ink text-paper relative overflow-hidden">
+      <div className="container mx-auto px-5 lg:px-8 pt-20 pb-10 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <p className="eyebrow mb-4">Sitemap</p>
-          <ul className="space-y-2 mono text-ink/80">
-            {["Work", "Thinking", "About", "Speaking", "Contact"].map((l) => (
+          <p className="eyebrow text-paper/60 mb-4">Work</p>
+          <ul className="space-y-2 mono text-paper/85">
+            {work.map(([l, h]) => (
               <li key={l}>
-                <a href={`#${l.toLowerCase()}`} className="link-underline">{l}</a>
+                <Link to={h} className="link-underline">{l}</Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="eyebrow mb-4">Social</p>
-          <ul className="space-y-2 mono text-ink/80">
-            <li><a className="link-underline" href="https://linkedin.com/in/adnan2" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a className="link-underline" href="https://x.com" target="_blank" rel="noopener noreferrer">X</a></li>
-            <li><a className="link-underline" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <p className="eyebrow text-paper/60 mb-4">Companies</p>
+          <ul className="space-y-2 mono text-paper/85">
+            {companies.map(([l, h]) => (
+              <li key={l}>
+                <a className="link-underline" href={h} target="_blank" rel="noopener noreferrer">{l}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
-          <p className="eyebrow mb-4">Colophon</p>
-          <p className="mono text-ink/80 leading-relaxed max-w-[28ch]">
-            Built in Auckland. Type set in Fraunces and Inter. © {new Date().getFullYear()} Adnan Khan.
-          </p>
+          <p className="eyebrow text-paper/60 mb-4">Elsewhere</p>
+          <ul className="space-y-2 mono text-paper/85">
+            {elsewhere.map(([l, h]) => (
+              <li key={l}>
+                <a className="link-underline" href={h} target="_blank" rel="noopener noreferrer">{l}</a>
+              </li>
+            ))}
+          </ul>
         </div>
+      </div>
+      <div className="container mx-auto px-5 lg:px-8 pb-8 flex flex-wrap justify-between mono text-paper/60 gap-3">
+        <span>© {new Date().getFullYear()} Adnan Khan. Auckland, Aotearoa New Zealand.</span>
+        <span className="text-sienna">Built with care.</span>
       </div>
       <div ref={wordmark} className="px-5 lg:px-8 -mb-[6vw]">
         <p
@@ -55,6 +87,15 @@ const SiteFooter = () => {
         >
           ADNAN KHAN
         </p>
+      </div>
+      <div className="hairline-t border-paper/20 overflow-hidden py-4">
+        <div className="flex w-max animate-marquee whitespace-nowrap mono text-sienna text-sm tracking-[0.3em]">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <span key={i} className="pr-8" aria-hidden={i > 0 ? true : undefined}>
+              ✱ AUCKLAND ✱ MARTECH ✱ MMM ✱ AI ✱ PRIVACY-FIRST MEASUREMENT ✱ STITCH ✱ STITCH PREDICT ✱
+            </span>
+          ))}
+        </div>
       </div>
     </footer>
   );

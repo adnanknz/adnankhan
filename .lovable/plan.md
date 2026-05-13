@@ -1,59 +1,84 @@
-## Bold editorial rebuild of adnan.co.nz
+## Adnan Khan site — multi-route rebuild on Vite SPA
 
-Replace the current multi-page site with a single-page editorial scroll experience using a Bone & Oxblood palette, Fraunces/Inter/JetBrains Mono typography, and a print-magazine grid. Keep Web3Forms contact integration and existing repo/deploy setup.
+### Reality check on "server-rendered"
 
-### Scope
+The brief asks for SSR/SSG so AI crawlers see real HTML. Lovable's stack is **Vite + React + react-router-dom (client-rendered SPA)** — true SSR is not supported here. The closest viable approach within this stack is:
 
-**Design system overhaul**
-- `tailwind.config.ts`: add `paper`, `surface`, `ink`, `oxblood`, `sienna`, `hairline`, `bone` colours; add `serif` (Fraunces), `sans` (Inter), `mono` (JetBrains Mono) families; keep existing tokens for shadcn.
-- `src/index.css`: set `paper` as default body background, `ink` text, add SVG grain overlay (200x200 tile via CSS background), `::first-letter` drop-cap utility, marquee `@keyframes`, focus outline, reduced-motion guards.
-- `index.html`: preconnect + Google Fonts link for Fraunces / Inter / JetBrains Mono; preload Fraunces variable woff2; update `<title>` and meta description; Person JSON-LD with awards, alumniOf, worksFor, sameAs.
+- **Per-route `<head>` via `react-helmet-async`** so every route has unique title/description/canonical/OG/Twitter/JSON-LD.
+- **Static prerendering at deploy time via `vite-plugin-prerender-spa`** (or `react-snap`) so each route in `dist/` ships a real HTML file with the rendered DOM. Cloudflare Pages serves the prerendered HTML to crawlers; React then hydrates for users. This solves the "JS-only body" problem for GPTBot/ClaudeBot/Googlebot.
+- **`public/_headers`, `public/robots.txt`, `public/llms.txt`, `public/sitemap.xml`** are picked up by Cloudflare Pages directly.
 
-**Restyle shadcn primitives**
-- `Button`: 2px radius, oxblood primary, ghost variant with hairline border + oxblood hover, trailing-arrow translate utility.
-- `Accordion`: strip chrome, mono `+/x` indicator, hairline dividers.
-- `Input` / `Textarea`: hairline bottom border, focus thickens to 2px oxblood; floating mono caption pattern.
-- `Card`: no shadow, hairline border, hover lift + oxblood underline.
+If you'd rather migrate the repo to Next.js or Astro for true SSR, that's a separate (larger) move outside Lovable's preview — say the word and I'll scope it.
 
-**Single-page route + nav**
-- Convert `/` to a long-form scroll page composed of section components. Hidden `/notes` route as a lazy-loaded placeholder. Remove old multi-page routes from `App.tsx` (About, LegalAI, MarTech, Work, Insights, Speaking, Contact) since their content moves into the scroll. Anchor links replace nav links.
-- New `Navbar`: AK monogram (Fraunces 900 oxblood + sienna underline) left, anchor links right, shrink-on-scroll, mobile full-screen oxblood overlay.
+### Routes (react-router-dom)
 
-**Sections (one component each, in `src/components/sections/`)**
-1. `Hero` — full viewport, mono coordinate caption, "Adnan Khan" Display 1 with Splitting per-word reveal, positioning line with `<mark>grow</mark>` underline draw-in, bio, two CTAs, vertical "SCROLL ↓".
-2. `Marquee` — pure CSS infinite translateX, oxblood text, hairline borders, pause on hover, reduced-motion off.
-3. `ClientWall` — TRUSTED BY eyebrow, 5-col wordmark grid with hairline cells + scroll-stagger fade, secondary heritage line.
-4. `AwardsStrip` — full-bleed oxblood background, four count-up numerals (3x, 2x, 1x, 1 of 5) with mono captions, hairline verticals.
-5. `SelectedWork` — three pinned case study cards (Turners, AA Smartfuel, Comvita) with headline left / outcomes right / hairline divider / image below.
-6. `About` — essay (drop cap on first paragraph) + sticky timeline sidebar (2003→present roles).
-7. `Services` — numbered Accordion 01–05 in priority order.
-8. `StitchBlocks` — two side-by-side blocks for Stitch and Stitch Predict with CTA links.
-9. `Thinking` — year-bucketed list (mono date / Fraunces title / Inter source) with bone hover row.
-10. `Press` — "AS SEEN IN" row with mono asterisks separating outlets.
-11. `Testimonials` — two pull quotes, oxblood left border.
-12. `Contact` — left prompt + contact details, right Web3Forms form with floating mono captions; success swap.
-13. `SiteFooter` — three mono columns (sitemap / social / colophon) above giant `ADNAN KHAN` Fraunces 900 oxblood wordmark anchored bottom, descenders cropped.
+```
+/                  Index (14-section one-pager, anchor nav)
+/about             About
+/services          Services + FAQ
+/work              Work index
+/work/turners      Case detail
+/work/aa-smartfuel Case detail
+/work/mr-apple     Case detail
+/thinking          Thinking index (static seed list)
+/thinking/:slug    Article (static MDX-style data file, 3 seed posts)
+/contact           Contact (Web3Forms)
+/notes             keep existing placeholder
+*                  404 in Bone & Oxblood
+```
 
-**Motion**
-- Install `gsap @gsap/react lenis splitting` and wire `ReactLenis` at `App` root with `gsap.ticker` sync. Wrap every timeline in `gsap.matchMedia()` reduced-motion guard.
-- Hero word reveal, "grow" underline draw, count-ups, case-study pins (`scrub: 0.5`), client wall stagger, footer wordmark slide-up, magnetic buttons (≤6px on hover within 80px).
+### Files to add
 
-**Accessibility & SEO**
-- Single H1 in hero, sequential H2s. Skip-to-content link. 2px oxblood focus ring with offset. `aria-label` on form inputs matching floating captions. Keep existing `SEO` component but update default title/description; emit Person JSON-LD inline in `index.html`.
-- Contact form keeps Zod validation, honeypot, throttle, Web3Forms key `1b6b76cb-2e33-43e6-9c08-77f081fdf043`.
+- `src/layouts/SiteLayout.tsx` — shared Navbar + footer wrapper, skip link, sitewide JSON-LD `@graph`.
+- `src/components/Navbar.tsx` — rebuild as multi-route nav (Home/About/Work/Services/Thinking/Contact), AK monogram, sticky shrink-on-scroll, mobile oxblood overlay.
+- `src/components/SiteFooter.tsx` — three-column footer + final sienna marquee + giant ADNAN KHAN wordmark (reuse existing).
+- `src/components/SEO.tsx` — wraps `react-helmet-async` `<Helmet>`; props for title, description, canonical, ogImage, jsonLd[].
+- `src/components/Breadcrumbs.tsx` — emits BreadcrumbList JSON-LD + visible crumbs on subpages.
+- `src/data/` — typed content modules: `caseStudies.ts`, `services.ts`, `faqs.ts` (12 Q&A from Part G), `thinking.ts`, `clients.ts`, `awards.ts`, `timeline.ts`, `speaking.ts`, `press.ts`, `certifications.ts`.
+- `src/pages/About.tsx`, `Services.tsx`, `Work.tsx`, `WorkDetail.tsx`, `Thinking.tsx`, `ThinkingPost.tsx`, `Contact.tsx`.
+- `src/components/sections/*` — keep existing section files; refactor to consume `src/data/*` (single source of truth, also used by FAQPage JSON-LD).
+- `public/robots.txt` — full allow-list from Part I (GPTBot, ClaudeBot, etc.).
+- `public/llms.txt` — Part I content.
+- `public/_headers` — Cloudflare security headers from Part L.
+- `scripts/generate-sitemap.ts` — wired to `predev`/`prebuild`, enumerates static routes + `thinking.ts` slugs.
 
-**Cleanup**
-- Delete old page files (`About.tsx`, `LegalAI.tsx`, `MarTech.tsx`, `Work.tsx`, `Insights.tsx`, `Speaking.tsx`, `Contact.tsx`) — content folded into the scroll. Keep `NotFound.tsx` and add `Notes.tsx` placeholder.
-- Update `public/sitemap.xml` to just `/` and `/notes`. Update `Footer` (replaced by `SiteFooter`).
-- Drop `react-helmet-async` usage from removed pages; keep `SEO` component for `Index` and `Notes`.
+### Files to edit
 
-### Out of scope
-- Blog CMS / live thinking feed (static seed list only).
-- Auto-generated OG image at build time (use a static placeholder if any).
-- Dark mode, auth, payments.
+- `src/App.tsx` — add the new routes, wrap in `HelmetProvider` + `SiteLayout`.
+- `src/main.tsx` — re-add `HelmetProvider` (was removed in earlier pass).
+- `src/pages/Index.tsx` — keep 14-section scroll, but apply Part C content corrections (drop Comvita case study, fix AA Smartfuel copy, rephrase Effie credit, restructure client wall into Stitch-era + krunch.co row, add Certifications/Governance/Firsts section, add FAQ accordion).
+- `index.html` — keep sitewide head + Person/Organization/ProfessionalService/WebSite `@graph` JSON-LD from Part J. Remove anything that should now be per-route.
+- `package.json` — add `react-helmet-async`, `vite-plugin-prerender-spa` (or `vite-plugin-ssr`-lite alternative), update predev/prebuild.
+- `vite.config.ts` — register prerender plugin with the route list.
+- `tailwind.config.ts` / `src/index.css` — add `paper-2` (#E8E2D5) and `rule` (#1A1A1A1A) tokens; keep existing palette.
 
-### Risks
-- Cloudflare image optimisation isn't available in the Lovable preview — `loading="lazy"` only.
-- Splitting.js + GSAP bundle adds ~80KB; acceptable for the design goal.
+### Content corrections (vs current Index)
 
-I'll proceed end-to-end without further questions unless something blocks.
+- Remove Comvita from SelectedWork; keep it only in the "krunch.co past work" row in ClientWall.
+- AA Smartfuel: rewrite to "sold out within weeks", keep 8x ROAS, drop "8,000 tickets in 8 days".
+- Effie language: "part of the Turners team that won 2x Gold Effies 2022".
+- Replace Comvita slot in SelectedWork with Mr Apple / Tealium.
+- ClientWall: split into Stitch-era 5-col grid + dimmer "Past global work (pre-Stitch, via krunch.co)" secondary row. Move Canon/Toyota/Honda into the secondary row.
+- Add new section 12 (Certifications / Governance / Firsts) before Testimonials.
+- Add FAQ accordion to home (12 Qs) + emit FAQPage JSON-LD.
+
+### Motion / a11y / perf
+
+- Keep Lenis + GSAP setup, but gate Lenis on `window.innerWidth >= 768` and reduced-motion (per Part K snippet) inside `App.tsx`.
+- 2px sienna focus ring with offset on `:focus-visible` in `index.css`.
+- `<img>` width/height + `loading="lazy"` (except hero LCP, which gets `fetchpriority="high"`).
+- Self-hosting Fraunces/Inter is out of scope this pass — keep Google Fonts with preconnect + `display=swap` (already in place); flag self-hosting as a follow-up.
+
+### OG images
+
+Generate 6 OG images via `imagegen` (premium tier, 1200×630) — one per top-level route — placed at `public/og/{route}.jpg`. Bone background, oxblood Fraunces "Adnan Khan" + route tagline.
+
+### Out of scope this pass
+
+- True SSR (would require migrating off Vite SPA — flagged above).
+- Self-hosting variable fonts.
+- Pulling Marketing Association article bodies — the 3 thinking posts will be locally authored summaries with canonical link to the MA hub.
+- Plausible/Cloudflare Web Analytics, Google Business Profile, Search Console submission (post-deploy ops).
+- Podcast embed (placeholder card with external links only).
+
+I'll proceed end-to-end once you approve.
