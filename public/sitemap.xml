@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://adnan.co.nz/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://adnan.co.nz/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://adnan.co.nz/legal-ai</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://adnan.co.nz/martech</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://adnan.co.nz/work</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://adnan.co.nz/insights</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://adnan.co.nz/speaking</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://adnan.co.nz/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-0.9">
+  <url><loc>https://adnan.co.nz/</loc><priority>1.0</priority></url>
+  <url><loc>https://adnan.co.nz/notes</loc><priority>0.5</priority></url>
 </urlset>
