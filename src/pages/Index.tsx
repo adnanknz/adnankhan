@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -122,6 +123,7 @@ const blogPreviews = [
 
 const Index = () => (
   <Layout>
+      <SEO title="Adnan Khan | Digital Transformation & AI Consultant NZ" description="Auckland-based consultant helping brands grow through media, technology, and AI. Ex-Meta, Effie Award winner." path="/" />
     {/* Hero */}
     <section className="py-24 lg:py-40 px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">

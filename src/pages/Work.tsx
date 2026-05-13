@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -96,6 +97,7 @@ const Work = () => {
 
   return (
     <Layout>
+      <SEO title="Selected Work & Case Studies | Adnan Khan" description="Award-winning case studies across MarTech, performance marketing and AI for brands including Turners, Comvita and Cisco." path="/work" />
       <section className="py-24 lg:py-32 px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
           <h1 className="font-display text-display-md lg:text-display-lg font-semibold mb-6">

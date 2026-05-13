@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Award, Briefcase, GraduationCap, Users } from "lucide-react";
 
 const careerTimeline = [
@@ -79,6 +80,7 @@ const certifications = [
 
 const About = () => (
   <Layout>
+      <SEO title="About Adnan Khan | Ex-Meta, Effie Winner | Auckland NZ" description="Co-Founder of Stitch and Stitch Predict. 15+ years in media, martech, and AI across NZ and global brands. Auckland, New Zealand." path="/about" />
     {/* Intro */}
     <section className="py-24 lg:py-32 px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">

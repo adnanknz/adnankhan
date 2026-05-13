@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ExternalLink } from "lucide-react";
 
 const articles = [
@@ -80,6 +81,7 @@ const upcomingContent = {
 
 const Insights = () => (
   <Layout>
+      <SEO title="Insights & Articles on Marketing, MarTech & AI | Adnan Khan" description="Thought leadership on AI in marketing, customer data, measurement, and the future of media in New Zealand." path="/insights" />
     <section className="py-24 lg:py-32 px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">
         <h1 className="font-display text-display-md lg:text-display-lg font-semibold mb-6">

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -100,6 +101,7 @@ const processSteps = [
 
 const LegalAI = () => (
   <Layout>
+      <SEO title="AI Consulting for NZ Law Firms | Adnan Khan" description="AI readiness, strategy, implementation and training for New Zealand law firms. Aligned with NZ Law Society AI Guidance." path="/legal-ai" />
     {/* Hero */}
     <section className="py-24 lg:py-32 px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">
