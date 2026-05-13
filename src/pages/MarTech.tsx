@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -127,6 +128,7 @@ const transformationAreas = [
 
 const MarTech = () => (
   <Layout>
+      <SEO title="MarTech, Media & Digital Transformation | Adnan Khan NZ" description="Customer data infrastructure, martech consulting, media strategy, and marketing mix modelling through Stitch and Stitch Predict." path="/martech" />
     {/* Hero */}
     <section className="py-24 lg:py-32 px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">

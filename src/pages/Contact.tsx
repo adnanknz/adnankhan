@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -59,6 +60,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO title="Contact Adnan Khan | Auckland NZ Consultant" description="Get in touch about digital transformation, martech, AI consulting, or speaking engagements. Based in Auckland, New Zealand." path="/contact" />
       <section className="py-24 lg:py-32 px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
           <h1 className="font-display text-display-md lg:text-display-lg font-semibold mb-6">
