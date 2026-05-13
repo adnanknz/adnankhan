@@ -1,40 +1,49 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
+import { ReactLenis } from "lenis/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
-import About from "./pages/About.tsx";
-import LegalAI from "./pages/LegalAI.tsx";
-import MarTech from "./pages/MarTech.tsx";
-import Work from "./pages/Work.tsx";
-import Insights from "./pages/Insights.tsx";
-import Speaking from "./pages/Speaking.tsx";
-import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
+
+const Notes = lazy(() => import("./pages/Notes.tsx"));
+
+gsap.registerPlugin(ScrollTrigger);
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/legal-ai" element={<LegalAI />} />
-          <Route path="/martech" element={<MarTech />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/insights" element={<Insights />} />
-          <Route path="/speaking" element={<Speaking />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  useEffect(() => {
+    // Sync ScrollTrigger with Lenis via gsap ticker
+    const update = () => ScrollTrigger.update();
+    gsap.ticker.add(update);
+    return () => gsap.ticker.remove(update);
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
+          <BrowserRouter>
+            <a href="#main" className="skip-link">Skip to content</a>
+            <Suspense fallback={null}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/notes" element={<Notes />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </ReactLenis>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

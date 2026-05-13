@@ -1,77 +1,96 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Legal AI", href: "/legal-ai" },
-  { label: "MarTech", href: "/martech" },
-  { label: "Work", href: "/work" },
-  { label: "Insights", href: "/insights" },
-  { label: "Speaking", href: "/speaking" },
-  { label: "Contact", href: "/contact" },
+const links = [
+  { label: "Work", href: "#work" },
+  { label: "Thinking", href: "#thinking" },
+  { label: "About", href: "#about" },
+  { label: "Speaking", href: "#speaking" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-6 lg:px-8">
-        <Link to="/" className="font-display text-xl font-semibold tracking-tight text-foreground">
-          Adnan Khan
-        </Link>
-
-        {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`text-sm tracking-wide transition-colors hover:text-accent ${
-                location.pathname === link.href
-                  ? "text-accent font-medium"
-                  : "text-muted-foreground"
-              }`}
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-paper/85 backdrop-blur-md hairline-b py-2" : "bg-transparent py-4"
+        }`}
+      >
+        <div className="container mx-auto flex items-center justify-between px-5 lg:px-8">
+          <Link to="/" className="group inline-flex items-baseline" aria-label="Adnan Khan — home">
+            <span
+              className="font-serif font-black text-oxblood text-2xl leading-none relative"
+              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}
             >
-              {link.label}
-            </Link>
-          ))}
-        </div>
+              AK
+              <span className="absolute left-0 right-0 -bottom-1 h-px bg-sienna" />
+            </span>
+          </Link>
 
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-foreground"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="lg:hidden bg-background border-b border-border">
-          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setOpen(false)}
-                className={`text-base transition-colors hover:text-accent ${
-                  location.pathname === link.href
-                    ? "text-accent font-medium"
-                    : "text-muted-foreground"
-                }`}
+          <nav className="hidden lg:flex items-center gap-10">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[13px] tracking-[0.06em] uppercase font-medium text-ink link-underline"
               >
-                {link.label}
-              </Link>
+                {l.label}
+              </a>
             ))}
+          </nav>
+
+          <button
+            className="lg:hidden text-ink"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={24} />
+          </button>
+        </div>
+      </header>
+
+      {open && (
+        <div className="fixed inset-0 z-[60] bg-oxblood text-paper flex flex-col">
+          <div className="flex items-center justify-between px-5 lg:px-8 py-4">
+            <span
+              className="font-serif font-black text-paper text-2xl"
+              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}
+            >
+              AK
+            </span>
+            <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-paper">
+              <X size={28} />
+            </button>
           </div>
+          <nav className="flex-1 flex flex-col justify-center gap-6 px-8">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="font-serif text-5xl font-bold"
+                style={{ fontVariationSettings: '"opsz" 96' }}
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+          <p className="mono text-paper/60 px-8 pb-8">AUCKLAND -36.85°, 174.76°</p>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 
