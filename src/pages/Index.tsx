@@ -248,7 +248,7 @@ const Index = () => (
           {clients.map((name) => (
             <span
               key={name}
-              className="text-lg font-display text-muted-foreground/50 font-semibold"
+              className="text-lg font-display text-muted-foreground font-semibold"
             >
               {name}
             </span>
