@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { SITE } from "@/data/site";
-import { caseStudies } from "@/data/caseStudies";
+import { stitchClients, krunchClients } from "@/data/clients";
 
 const Work = () => (
   <>
     <SEO
-      title="Work · Award-winning Martech & MMM Case Studies · Adnan Khan"
-      description="Award-winning martech and MMM case studies. Turners, Mr Apple, AA Smartfuel. TVNZ Marketing Awards Supreme winner. 2x Gold Effie. Global Effie Finalist 2023."
+      title="Work — Adnan Khan"
+      description="18 years of digital transformation, martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai, Canon, Toyota, Honda and more."
       path="/work"
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
@@ -17,32 +16,39 @@ const Work = () => (
     <article className="pt-32 pb-24 px-5 lg:px-8">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Work</p>
-        <h1 className="font-display-1 text-ink mb-16 max-w-[18ch]" style={{ fontSize: "clamp(56px, 9vw, 168px)" }}>
-          Outcomes, not outputs.
+        <h1 className="font-display-1 text-ink mb-8 max-w-[20ch]" style={{ fontSize: "clamp(56px, 9vw, 144px)" }}>
+          Selected work.
         </h1>
-        <div className="space-y-20">
-          {caseStudies.map((c) => (
-            <Link key={c.slug} to={`/work/${c.slug}`} className="group block hairline-t pt-10">
-              <div className="grid grid-cols-12 gap-x-6">
-                <div className="col-span-12 lg:col-span-7">
-                  <p className="eyebrow mb-3">{c.client}</p>
-                  <h2 className="font-serif font-bold text-ink group-hover:text-oxblood transition-colors" style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1.05 }}>
-                    {c.headline}
-                  </h2>
-                  <p className="mt-6 text-ink/80 text-[16px] leading-relaxed max-w-[58ch]">{c.body}</p>
-                  <span className="mt-6 inline-flex items-center gap-2 link-underline text-oxblood mono">
-                    Read case study →
-                  </span>
-                </div>
-                <ul className="col-span-12 lg:col-span-4 lg:col-start-9 space-y-2 mt-6 lg:mt-0">
-                  {c.metrics.map((m) => (
-                    <li key={m} className="text-ink/85 text-[15px] border-b border-hairline/60 pb-2">{m}</li>
-                  ))}
-                </ul>
+        <p className="text-ink/85 text-[18px] leading-[1.6] max-w-[64ch] mb-16">
+          18 years across global tech, transformation consultancies, and now Stitch. A few of the brands I've helped grow.
+        </p>
+
+        <section className="mb-20">
+          <p className="eyebrow mb-6">Stitch era · 2019 – now</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 hairline-t hairline-l">
+            {stitchClients.map((c) => (
+              <div key={c} className="hairline-r hairline-b px-4 py-8 flex items-center justify-center text-center">
+                <span className="font-sans font-medium text-ink text-[14px] uppercase tracking-[0.06em]">{c}</span>
               </div>
-            </Link>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <p className="eyebrow mb-6">krunch.co heritage · 2014 – 2019</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 hairline-t hairline-l">
+            {krunchClients.map((c) => (
+              <div key={c} className="hairline-r hairline-b px-4 py-8 flex items-center justify-center text-center">
+                <span className="font-sans font-medium text-ink/80 text-[14px] uppercase tracking-[0.06em]">{c}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-ink/75 text-[15px] leading-relaxed max-w-[72ch] mt-8">
+            Pre-Stitch transformation work for global brands. I led the Marketo and martech transformation that
+            delivered Comvita's 480% lead-conversion lift and 255% nurture uplift, and produced the Cisco global
+            integration case study that was a world first.
+          </p>
+        </section>
       </div>
     </article>
   </>

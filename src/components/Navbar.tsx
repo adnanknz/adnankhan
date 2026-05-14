@@ -3,9 +3,10 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { label: "About", to: "/about" },
   { label: "Work", to: "/work" },
   { label: "Services", to: "/services" },
-  { label: "About", to: "/about" },
+  { label: "Case Studies", to: "/casestudies" },
   { label: "Thinking", to: "/thinking" },
   { label: "Contact", to: "/contact" },
 ];
@@ -42,13 +43,13 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-10" aria-label="Primary">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
             {links.map((l) => (
               <NavLink
                 key={l.to}
                 to={l.to}
                 className={({ isActive }) =>
-                  `text-[13px] tracking-[0.06em] uppercase font-medium link-underline ${
+                  `text-[12px] tracking-[0.06em] uppercase font-medium link-underline ${
                     isActive ? "text-oxblood" : "text-ink"
                   }`
                 }
@@ -56,6 +57,12 @@ const Navbar = () => {
                 {l.label}
               </NavLink>
             ))}
+            <Link
+              to="/contact"
+              className="ml-2 inline-flex items-center bg-oxblood text-paper text-[12px] tracking-[0.06em] uppercase font-medium px-4 py-2 rounded-[4px] hover:bg-oxblood/90 transition-colors"
+            >
+              Work with me
+            </Link>
           </nav>
 
           <button
@@ -81,13 +88,13 @@ const Navbar = () => {
               <X size={28} />
             </button>
           </div>
-          <nav className="flex-1 flex flex-col justify-center gap-6 px-8" aria-label="Mobile">
+          <nav className="flex-1 flex flex-col justify-center gap-5 px-8" aria-label="Mobile">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="font-serif text-5xl font-bold"
+                className="font-serif text-4xl font-bold"
                 style={{ fontVariationSettings: '"opsz" 96' }}
               >
                 {l.label}

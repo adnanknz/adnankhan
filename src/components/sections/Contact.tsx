@@ -6,10 +6,11 @@ import MagneticButton from "@/components/MagneticButton";
 const schema = z.object({
   name: z.string().trim().min(1).max(100),
   email: z.string().trim().email().max(255),
+  company: z.string().trim().max(120).optional(),
   message: z.string().trim().min(1).max(2000),
 });
 
-type Field = "name" | "email" | "message";
+type Field = "name" | "email" | "company" | "message";
 
 const FloatField = ({
   id, label, type = "text", value, onChange, multiline, maxLength,
@@ -49,7 +50,7 @@ const FloatField = ({
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
   const [botcheck, setBotcheck] = useState("");
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
@@ -80,6 +81,7 @@ const Contact = () => {
       fd.append("subject", "New enquiry from adnan.co.nz");
       fd.append("name", parsed.data.name);
       fd.append("email", parsed.data.email);
+      if (parsed.data.company) fd.append("company", parsed.data.company);
       fd.append("message", parsed.data.message);
       fd.append("from_name", "adnan.co.nz");
       const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: fd });
@@ -141,6 +143,7 @@ const Contact = () => {
               <form onSubmit={submit} className="space-y-2">
                 <FloatField id="name" label="NAME" value={form.name} onChange={(v) => setForm({ ...form, name: v })} maxLength={100} />
                 <FloatField id="email" label="EMAIL" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} maxLength={255} />
+                <FloatField id="company" label="COMPANY (OPTIONAL)" value={form.company} onChange={(v) => setForm({ ...form, company: v })} maxLength={120} />
                 <FloatField id="message" label="MESSAGE" multiline value={form.message} onChange={(v) => setForm({ ...form, message: v })} maxLength={2000} />
                 <input
                   type="text" name="botcheck" value={botcheck}

@@ -1,29 +1,35 @@
 # Adnan Khan
-> Marketing technology pioneer in Auckland, New Zealand. Co-Founder of
-> Stitch (martech/adtech/media consultancy) and Stitch Predict (marketing
-> mix modelling SaaS). Ex-Meta (5th in APAC), ex-Microsoft. 3x TVNZ
-> Marketing Award winner including Supreme 2022. Part of Turners team
-> that won 2x Gold Effie 2022. Global Effie Finalist 2023.
 
-## Primary URLs
-- [Home](https://adnan.co.nz/)
-- [About](https://adnan.co.nz/about)
-- [Services](https://adnan.co.nz/services)
-- [Work](https://adnan.co.nz/work)
-- [Thinking](https://adnan.co.nz/thinking)
-- [Contact](https://adnan.co.nz/contact)
+> Co-Founder & Managing Partner of Stitch and Co-Founder of Stitch Predict. Auckland, New Zealand. Digital transformation, customer data, marketing technology, media, AI, marketing mix modelling.
 
-## Companies
-- [Stitch](https://stitchtech.co)
-- [Stitch Predict](https://stitchpredict.com)
+## Quick facts
+- Name: Adnan Khan
+- Title: Co-Founder & Managing Partner, Stitch | Co-Founder, Stitch Predict
+- Location: Auckland, New Zealand
+- Email: adnan.khan@me.com
+- Phone: +64 27 513 0110
+- LinkedIn: https://www.linkedin.com/in/adnan2/
+- Facebook: https://www.facebook.com/khan
+- About.me: https://about.me/adnank
+- Stitch: https://stitchtech.co
+- Stitch Predict: https://stitchpredict.com
 
-## Profiles
-- [LinkedIn](https://www.linkedin.com/in/adnan2/)
-- [About.me](https://about.me/adnank)
-- [IMANZ](https://www.imanz.co.nz/our-agencies/stitch)
-- [Marketing Association NZ author hub](https://marketing.org.nz/resource-hub/author/adnan-khan)
+## Pages
+- [About](https://adnan.co.nz/about): Background and career.
+- [Work](https://adnan.co.nz/work): Clients and engagements.
+- [Services](https://adnan.co.nz/services): Practice areas.
+- [Case Studies](https://adnan.co.nz/casestudies): Comvita, AA Smartfuel, Turners, Mr Apple, Cisco.
+- [Thinking](https://adnan.co.nz/thinking): Articles, podcasts, talks.
+- [Contact](https://adnan.co.nz/contact): Contact details and form.
 
-## Topics
-Marketing Mix Modelling, Customer Data Platforms, Martech, Adtech, AI
-Marketing, Privacy-First Measurement, Tealium, Meta Advertising,
-First-Party Data.
+## Awards
+- TVNZ Marketing Awards 2022: Supreme Award Winner, Excellence in Brand Transformation Strategy, Excellence in Consumer Products & Services Strategy
+- 2x Gold Effie 2022 (Strategic Thinking, Retail)
+- Global Effie Finalist 2023
+- LinkedIn Top Voice — Digital Marketing
+
+## Industry roles
+- IAB NZ AI Working Group Lead
+- Chair, Marketing Association Digital SIG
+- Member, IAB NZ Emerging Technology Council
+- Member, IMANZ Innovation & Technology Group
