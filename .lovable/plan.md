@@ -1,84 +1,67 @@
-## Adnan Khan site — multi-route rebuild on Vite SPA
+# Adnan.co.nz — Iteration 3 Master Update Plan
 
-### Reality check on "server-rendered"
+This is a large, multi-part update. I'll execute it in phases, preserving the existing Bone & Oxblood design system, Web3Forms integration, and Cloudflare Pages deployment.
 
-The brief asks for SSR/SSG so AI crawlers see real HTML. Lovable's stack is **Vite + React + react-router-dom (client-rendered SPA)** — true SSR is not supported here. The closest viable approach within this stack is:
+## Phase 1 — Technical foundation
 
-- **Per-route `<head>` via `react-helmet-async`** so every route has unique title/description/canonical/OG/Twitter/JSON-LD.
-- **Static prerendering at deploy time via `vite-plugin-prerender-spa`** (or `react-snap`) so each route in `dist/` ships a real HTML file with the rendered DOM. Cloudflare Pages serves the prerendered HTML to crawlers; React then hydrates for users. This solves the "JS-only body" problem for GPTBot/ClaudeBot/Googlebot.
-- **`public/_headers`, `public/robots.txt`, `public/llms.txt`, `public/sitemap.xml`** are picked up by Cloudflare Pages directly.
+1. **Prerendering**: Add `vite-plugin-prerender` (or `react-snap`) to `vite.config.ts` with the route list (`/`, `/about`, `/work`, `/services`, `/thinking`, `/casestudies`, `/contact`, `/now`, `/uses`, `/cv`). Build output will contain rendered HTML per route.
+2. **Routing fixes**:
+   - Add `/casestudies`, `/now`, `/uses`, `/cv` routes in `src/App.tsx`.
+   - Rename current `/work/:slug` flow as needed; consolidate case studies under `/casestudies` (single page with anchors, since the brief says "render five cards previewing" with `/casestudies#anchor` links).
+   - Add `/case-studies` and `/case-studies/*` 301 redirects via `public/_redirects` (and a runtime fallback `<Navigate>` for SPA paths).
+3. **Per-page SEO**: Update each page's `SEO` component call with the exact title, description, and canonical from the brief.
+4. **JSON-LD**: 
+   - Replace site-wide graph in `SiteLayout.tsx` with the 4 blocks: Person, Stitch Org, Stitch Predict Org, ProfessionalService.
+   - Add FAQPage schema on Home and Contact (6 Qs from brief).
+   - Add Article schema per case study on `/casestudies`.
+5. **robots.txt**: Replace `public/robots.txt` with the expanded AI-crawler allowlist (including Bytespider, Amazonbot, cohere-ai, Meta-ExternalAgent, FacebookBot, CCBot now allowed).
+6. **sitemap.xml**: Replace `public/sitemap.xml` with the 10-URL list and 2026-05-14 lastmod dates.
+7. **llms.txt + llms-full.txt**: Create both at `public/llms.txt` and `public/llms-full.txt` with the exact content from the brief plus long-form bio.
+8. **Headers/manifest**: 
+   - Update `public/_headers` with security headers from §4.5.
+   - Create `public/_redirects` for case-studies → casestudies.
+   - Create `public/manifest.json` with name/icons/theme_color #6B1F2A, background_color #F5F1EA.
+   - Update `index.html`: theme-color meta, manifest link, apple-touch-icon, `link rel="me"` LinkedIn + mailto, robots meta with max-image-preview.
 
-If you'd rather migrate the repo to Next.js or Astro for true SSR, that's a separate (larger) move outside Lovable's preview — say the word and I'll scope it.
+## Phase 2 — Content per page
 
-### Routes (react-router-dom)
+9. **Home (`src/pages/Index.tsx`)** — confirm sections in order: Hero, Credentials strip, What I Do (5 services), Recent Work (5 case study cards), Achievements counters, Built With (Stitch + Stitch Predict), Recent Thinking (3 items), FAQ accordion (6 Qs), Contact teaser (Web3Forms), Footer. Replace hero H1/subhead/CTAs with brief copy. Update credentials strip text.
+10. **About (`src/pages/About.tsx`)** — replace body with verbatim About copy (multi-paragraph bio, education, certifications, recognition, speaking).
+11. **Work (`src/pages/Work.tsx`)** — H1 + intro from brief; render two logo groups (Stitch era list + krunch.co heritage list) with caption.
+12. **Services (`src/pages/Services.tsx`)** — five sections in exact order with descriptions from brief.
+13. **Case Studies (new `src/pages/CaseStudies.tsx`)** — replace `/work/:slug` detail flow. Single page with 5 case study sections (Comvita, AA Smartfuel, Turners, Mr Apple, Cisco) each with result strip + body + Article JSON-LD; anchor IDs match home links.
+14. **Thinking (`src/pages/Thinking.tsx`)** — replace with the seeded 2024–2026 entries from brief, reverse-chronological.
+15. **Contact (`src/pages/Contact.tsx`)** — H1, intro, contact rail (email/phone/LinkedIn/Facebook/Stitch/Stitch Predict), Web3Forms form with honeypot, address line, FAQ schema.
+16. **Now (`src/pages/Now.tsx`)** — new page, single paragraph from brief.
+17. **Uses (`src/pages/Uses.tsx`)** — new page, brief sections for hardware/software/AI tools/martech.
+18. **CV (`src/pages/CV.tsx`)** — new page, full role timeline + education + certifications.
 
-```
-/                  Index (14-section one-pager, anchor nav)
-/about             About
-/services          Services + FAQ
-/work              Work index
-/work/turners      Case detail
-/work/aa-smartfuel Case detail
-/work/mr-apple     Case detail
-/thinking          Thinking index (static seed list)
-/thinking/:slug    Article (static MDX-style data file, 3 seed posts)
-/contact           Contact (Web3Forms)
-/notes             keep existing placeholder
-*                  404 in Bone & Oxblood
-```
+## Phase 3 — Data updates
 
-### Files to add
+19. Update `src/data/clients.ts` — split into Stitch era (Group A) and krunch.co heritage (Group B) per brief list.
+20. Update `src/data/caseStudies.ts` — add Comvita and Cisco; refresh existing 3 with brief copy + metrics.
+21. Update `src/data/thinking.ts` — replace with 2024–2026 entries.
+22. Update `src/data/faqs.ts` — replace with the 6 Qs matching the FAQPage schema.
+23. Update `src/data/site.ts` — confirm address (295 Parnell Road), phone, email, all sameAs URLs, founding dates.
 
-- `src/layouts/SiteLayout.tsx` — shared Navbar + footer wrapper, skip link, sitewide JSON-LD `@graph`.
-- `src/components/Navbar.tsx` — rebuild as multi-route nav (Home/About/Work/Services/Thinking/Contact), AK monogram, sticky shrink-on-scroll, mobile oxblood overlay.
-- `src/components/SiteFooter.tsx` — three-column footer + final sienna marquee + giant ADNAN KHAN wordmark (reuse existing).
-- `src/components/SEO.tsx` — wraps `react-helmet-async` `<Helmet>`; props for title, description, canonical, ogImage, jsonLd[].
-- `src/components/Breadcrumbs.tsx` — emits BreadcrumbList JSON-LD + visible crumbs on subpages.
-- `src/data/` — typed content modules: `caseStudies.ts`, `services.ts`, `faqs.ts` (12 Q&A from Part G), `thinking.ts`, `clients.ts`, `awards.ts`, `timeline.ts`, `speaking.ts`, `press.ts`, `certifications.ts`.
-- `src/pages/About.tsx`, `Services.tsx`, `Work.tsx`, `WorkDetail.tsx`, `Thinking.tsx`, `ThinkingPost.tsx`, `Contact.tsx`.
-- `src/components/sections/*` — keep existing section files; refactor to consume `src/data/*` (single source of truth, also used by FAQPage JSON-LD).
-- `public/robots.txt` — full allow-list from Part I (GPTBot, ClaudeBot, etc.).
-- `public/llms.txt` — Part I content.
-- `public/_headers` — Cloudflare security headers from Part L.
-- `scripts/generate-sitemap.ts` — wired to `predev`/`prebuild`, enumerates static routes + `thinking.ts` slugs.
+## Phase 4 — Design polish
 
-### Files to edit
+24. Verify header nav includes: Home, About, Work, Services, Case Studies, Thinking, Contact + "Work with me" CTA → /contact. Mobile burger preserved.
+25. Verify all `<img>` alt text; add where missing on logos and case study heroes.
+26. Verify focus rings + skip-to-content link present.
 
-- `src/App.tsx` — add the new routes, wrap in `HelmetProvider` + `SiteLayout`.
-- `src/main.tsx` — re-add `HelmetProvider` (was removed in earlier pass).
-- `src/pages/Index.tsx` — keep 14-section scroll, but apply Part C content corrections (drop Comvita case study, fix AA Smartfuel copy, rephrase Effie credit, restructure client wall into Stitch-era + krunch.co row, add Certifications/Governance/Firsts section, add FAQ accordion).
-- `index.html` — keep sitewide head + Person/Organization/ProfessionalService/WebSite `@graph` JSON-LD from Part J. Remove anything that should now be per-route.
-- `package.json` — add `react-helmet-async`, `vite-plugin-prerender-spa` (or `vite-plugin-ssr`-lite alternative), update predev/prebuild.
-- `vite.config.ts` — register prerender plugin with the route list.
-- `tailwind.config.ts` / `src/index.css` — add `paper-2` (#E8E2D5) and `rule` (#1A1A1A1A) tokens; keep existing palette.
+## Technical notes
 
-### Content corrections (vs current Index)
+- Prerendering: `vite-plugin-prerender` requires a headless Chromium step at build. If install/build issues arise on Lovable preview, I'll fall back to `react-snap` (postbuild) or `vite-plugin-ssg`. The Cloudflare Pages build will run the prerender step.
+- The current code uses `react-helmet-async` for per-route meta — that's preserved and used for all per-page tags.
+- The `_redirects` file is Cloudflare-compatible (Lovable preview hosting ignores it but it ships in `dist/`).
+- I'll keep the existing oxblood/bone/Fraunces/Inter design tokens in `tailwind.config.ts` and `src/index.css` untouched unless a content addition needs a new utility.
 
-- Remove Comvita from SelectedWork; keep it only in the "krunch.co past work" row in ClientWall.
-- AA Smartfuel: rewrite to "sold out within weeks", keep 8x ROAS, drop "8,000 tickets in 8 days".
-- Effie language: "part of the Turners team that won 2x Gold Effies 2022".
-- Replace Comvita slot in SelectedWork with Mr Apple / Tealium.
-- ClientWall: split into Stitch-era 5-col grid + dimmer "Past global work (pre-Stitch, via krunch.co)" secondary row. Move Canon/Toyota/Honda into the secondary row.
-- Add new section 12 (Certifications / Governance / Firsts) before Testimonials.
-- Add FAQ accordion to home (12 Qs) + emit FAQPage JSON-LD.
+## What I won't do
 
-### Motion / a11y / perf
+- Won't change the Web3Forms key (kept as-is).
+- Won't alter the GitHub repo or Cloudflare Pages binding.
+- Won't generate new OG images unless you ask — I'll keep the existing `/og-image.jpg` reference.
+- Won't run Lighthouse from inside Lovable (no headless browser CI here); you'll run that post-deploy.
 
-- Keep Lenis + GSAP setup, but gate Lenis on `window.innerWidth >= 768` and reduced-motion (per Part K snippet) inside `App.tsx`.
-- 2px sienna focus ring with offset on `:focus-visible` in `index.css`.
-- `<img>` width/height + `loading="lazy"` (except hero LCP, which gets `fetchpriority="high"`).
-- Self-hosting Fraunces/Inter is out of scope this pass — keep Google Fonts with preconnect + `display=swap` (already in place); flag self-hosting as a follow-up.
-
-### OG images
-
-Generate 6 OG images via `imagegen` (premium tier, 1200×630) — one per top-level route — placed at `public/og/{route}.jpg`. Bone background, oxblood Fraunces "Adnan Khan" + route tagline.
-
-### Out of scope this pass
-
-- True SSR (would require migrating off Vite SPA — flagged above).
-- Self-hosting variable fonts.
-- Pulling Marketing Association article bodies — the 3 thinking posts will be locally authored summaries with canonical link to the MA hub.
-- Plausible/Cloudflare Web Analytics, Google Business Profile, Search Console submission (post-deploy ops).
-- Podcast embed (placeholder card with external links only).
-
-I'll proceed end-to-end once you approve.
+Approve and I'll execute end-to-end.
