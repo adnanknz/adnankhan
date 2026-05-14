@@ -1,11 +1,10 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MagneticButton from "@/components/MagneticButton";
 
 const Hero = () => {
   const root = useRef<HTMLDivElement>(null);
-  const markRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -15,22 +14,9 @@ const Hero = () => {
         if (words?.length) {
           gsap.set(words, { yPercent: 110, opacity: 0 });
           gsap.to(words, {
-            yPercent: 0,
-            opacity: 1,
-            duration: 0.9,
-            ease: "expo.out",
-            stagger: 0.06,
-            delay: 0.15,
+            yPercent: 0, opacity: 1, duration: 0.9, ease: "expo.out", stagger: 0.06, delay: 0.15,
           });
         }
-        ScrollTrigger.create({
-          trigger: root.current,
-          start: "top top",
-          end: "bottom 40%",
-          onEnter: () => markRef.current?.classList.add("is-in"),
-        });
-        // Trigger soon after load too
-        setTimeout(() => markRef.current?.classList.add("is-in"), 1200);
       }, root);
       return () => ctx.revert();
     });
@@ -44,57 +30,47 @@ const Hero = () => {
     >
       <div className="container mx-auto w-full grid grid-cols-12 gap-x-6">
         <p className="mono col-span-12 mb-8 lg:mb-16">
-          VOL. 01 / AUCKLAND −36.85°, 174.76° / EST. 2009
+          AUCKLAND −36.85°, 174.76° / EST. 2009 / VOL. 03
         </p>
       </div>
 
       <div className="container mx-auto w-full grid grid-cols-12 gap-x-6">
-        <h1 className="col-span-12 lg:col-span-11 font-display-1 text-ink select-none">
+        <h1 className="col-span-12 font-display-1 text-ink select-none" style={{ lineHeight: 0.92, letterSpacing: "-0.025em" }}>
           <span className="block overflow-hidden">
-            <span data-word className="inline-block" style={{ fontSize: "clamp(64px, 14vw, 220px)" }}>
-              Adnan
+            <span data-word className="inline-block" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+              Digital transformation,
             </span>
           </span>
-          <span className="block overflow-hidden pl-[16vw] lg:pl-[18vw]">
-            <span data-word className="inline-block" style={{ fontSize: "clamp(64px, 14vw, 220px)" }}>
-              Khan
+          <span className="block overflow-hidden">
+            <span data-word className="inline-block" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+              AI and growth for
+            </span>
+          </span>
+          <span className="block overflow-hidden">
+            <span data-word className="inline-block text-oxblood italic" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+              ambitious brands.
             </span>
           </span>
         </h1>
       </div>
 
-      <div className="container mx-auto w-full grid grid-cols-12 gap-x-6 mt-10 lg:mt-16">
-        <h2
-          className="col-span-12 lg:col-span-9 font-display-2 text-ink"
-          style={{ fontSize: "clamp(28px, 5vw, 72px)" }}
-        >
-          Helping brands{" "}
-          <mark ref={markRef} className="grow-mark text-ink bg-transparent">
-            grow
-          </mark>{" "}
-          through media, technology, and AI.
-        </h2>
-      </div>
-
       <div className="container mx-auto w-full grid grid-cols-12 gap-x-6 mt-12 lg:mt-20 items-end">
-        <p className="col-span-12 lg:col-span-5 text-ink/85 max-w-[50ch] text-[15px] leading-[1.55]">
-          Co-founder of Stitch and Stitch Predict. Former Country Manager for Facebook New Zealand.
-          Three-time TVNZ Marketing Award winner. Building the next generation of marketing
-          measurement from Auckland.
+        <p className="col-span-12 lg:col-span-6 text-ink/85 max-w-[56ch] text-[16px] leading-[1.6]">
+          Adnan Khan. Co-Founder of Stitch and Stitch Predict. 18 years across Meta, Microsoft,
+          krunch.co. Auckland, working globally.
         </p>
 
-        <div className="col-span-12 lg:col-span-6 lg:col-start-7 flex flex-wrap gap-3 mt-8 lg:mt-0 lg:justify-end">
-          <MagneticButton href="#contact" variant="primary">
+        <div className="col-span-12 lg:col-span-5 lg:col-start-8 flex flex-wrap gap-3 mt-8 lg:mt-0 lg:justify-end">
+          <MagneticButton href="/contact" variant="primary">
             Work with me <span aria-hidden>→</span>
           </MagneticButton>
-          <MagneticButton href="#thinking" variant="ghost">
-            Read recent thinking <span aria-hidden>→</span>
-          </MagneticButton>
+          <Link
+            to="/casestudies"
+            className="inline-flex items-center gap-2 border border-oxblood text-oxblood px-5 py-3 rounded-[4px] text-[14px] uppercase tracking-[0.06em] font-medium hover:bg-oxblood hover:text-paper transition-colors"
+          >
+            See the work <span aria-hidden>→</span>
+          </Link>
         </div>
-      </div>
-
-      <div className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 mono rotate-90 origin-right tracking-[0.3em]">
-        SCROLL ↓
       </div>
     </section>
   );
