@@ -1,61 +1,115 @@
 export interface ThinkingPost {
   slug: string;
   title: string;
-  date: string; // ISO
+  date: string;
   dateLabel: string;
   source: string;
+  kind: "Talk" | "Article" | "Podcast" | "Report" | "Panel";
   excerpt: string;
-  body: string[];
   externalUrl: string;
 }
 
 export const thinkingPosts: ThinkingPost[] = [
   {
-    slug: "2025-wrapped-marketing-insights",
-    title: "2025 Wrapped: Marketing Insights from MA's Digital SIG",
-    date: "2025-12-05",
-    dateLabel: "5 Dec 2025",
-    source: "Marketing Association NZ",
-    excerpt:
-      "A retrospective on the themes that shaped 2025 — from agentic AI moving from demo to production, to the long-overdue mainstreaming of MMM in NZ.",
-    body: [
-      "Across a year of Digital SIG events, three themes recurred: agentic AI moving from demo to production, the long-overdue mainstreaming of marketing mix modelling in New Zealand, and the gap between privacy-first ambition and operational reality.",
-      "This piece pulls together the most useful provocations from the year, the practitioners who advanced the field, and the questions every CMO should be asking heading into 2026.",
-      "Read the full piece on the Marketing Association resource hub.",
-    ],
-    externalUrl: "https://marketing.org.nz/resource-hub/author/adnan-khan",
+    slug: "iab-future-of-marketing-ai-2026",
+    title: "The Future of Marketing & AI",
+    date: "2026-03-05",
+    dateLabel: "5 Mar 2026",
+    source: "IAB NZ × Google Auckland",
+    kind: "Talk",
+    excerpt: "Moderator. AI working group event with Google NZ.",
+    externalUrl: "https://www.iab.org.nz/all-events/ai-the-future-of-marketing-event",
   },
   {
-    slug: "research-challenges-marketing-wisdom",
+    slug: "iab-data-guide-2026",
+    title: "Zero, First, Second, Third: A Plain-English Guide to Data for Everyone",
+    date: "2026-02-01",
+    dateLabel: "Feb 2026",
+    source: "IAB NZ",
+    kind: "Report",
+    excerpt: "Co-author. Plain-English guide to data types for marketers.",
+    externalUrl: "https://www.iab.org.nz/",
+  },
+  {
+    slug: "auckland-busmgt-719-2026",
+    title: "BUSMGT 719: Business Technology, industry panel",
+    date: "2026-01-15",
+    dateLabel: "2026",
+    source: "University of Auckland",
+    kind: "Panel",
+    excerpt: "Industry panellist for the Business Technology postgraduate course.",
+    externalUrl: "https://www.auckland.ac.nz/",
+  },
+  {
+    slug: "iab-q1-2026-ai-tools-tracker",
+    title: "Q1 2026 AI Tools Tracker",
+    date: "2026-01-10",
+    dateLabel: "Q1 2026",
+    source: "IAB NZ",
+    kind: "Report",
+    excerpt: "Contributor.",
+    externalUrl: "https://www.iab.org.nz/news-resources/q1-2026-ai-tools-tracker",
+  },
+  {
+    slug: "ma-digital-day-out-2025",
+    title: "AI panel — Digital Day Out 2025",
+    date: "2025-09-01",
+    dateLabel: "2025",
+    source: "Marketing Association NZ · Cordis Auckland",
+    kind: "Talk",
+    excerpt: "Moderator, AI panel at Digital Day Out 2025.",
+    externalUrl: "https://stoppress.co.nz/news/digital-day-out-2025/",
+  },
+  {
+    slug: "iab-q4-2025-ai-tools-report",
+    title: "Q4 2025 AI Tools Report",
+    date: "2025-10-01",
+    dateLabel: "Q4 2025",
+    source: "IAB NZ",
+    kind: "Report",
+    excerpt: "Contributor.",
+    externalUrl: "https://www.iab.org.nz/news-resources/new-q4-2025-update-ai-tools-report",
+  },
+  {
+    slug: "iab-kiwi-search-habits-2025",
+    title: "Kiwi Search Habits 2025: The Next Era of Search",
+    date: "2025-05-01",
+    dateLabel: "May 2025",
+    source: "IAB NZ",
+    kind: "Report",
+    excerpt: "Contributor and quoted source.",
+    externalUrl: "https://www.iab.org.nz/news-resources/kiwi-search-habits-the-next-era-of-search",
+  },
+  {
+    slug: "marketing-master-zania-guy-2024",
+    title: "Marketing Master — Adnan Khan with Zania Guy",
+    date: "2024-05-24",
+    dateLabel: "24 May 2024",
+    source: "Marketing Masters podcast · S1E5",
+    kind: "Podcast",
+    excerpt: "Long-form interview on martech, MMM, and the future of measurement.",
+    externalUrl: "https://podcasts.apple.com/nz/podcast/marketing-master-adnan-khan-speaks-with-zania-guy/id1731231116?i=1000656575942",
+  },
+  {
+    slug: "ma-research-challenges-marketing-wisdom-2024",
     title: "New Research Challenges Traditional Marketing Wisdom",
     date: "2024-10-15",
     dateLabel: "15 Oct 2024",
     source: "Marketing Association NZ",
-    excerpt:
-      "Recent research from Ehrenberg-Bass and others is challenging long-held marketing assumptions on brand vs. performance, attention, and the elasticity of advertising.",
-    body: [
-      "The 95/5 rule, the limits of category-entry-point thinking, the new attention metrics — there is more new evidence reshaping marketing in the last 24 months than in the prior decade.",
-      "I unpack the studies that genuinely change practice, separate them from the ones that simply confirm priors, and outline what NZ marketers should do differently as a result.",
-      "Read the full piece on the Marketing Association resource hub.",
-    ],
+    kind: "Article",
+    excerpt: "On Ehrenberg-Bass and what genuinely changes practice.",
     externalUrl: "https://marketing.org.nz/resource-hub/author/adnan-khan",
   },
   {
-    slug: "beyond-attribution-advanced-measurement",
-    title: "Beyond Attribution: Why Modern Marketers Need Advanced Measurement",
+    slug: "ma-beyond-attribution-2024",
+    title: "Beyond Attribution: Why Modern Marketers Need Advanced Measurement Strategies",
     date: "2024-09-11",
     dateLabel: "11 Sep 2024",
     source: "Marketing Association NZ",
-    excerpt:
-      "Last-click is dead. Multi-touch is unreliable. The future of measurement is a triangulation of MMM, incrementality testing and consented first-party data.",
-    body: [
-      "Cookie deprecation, mobile privacy and walled-garden over-attribution have broken digital attribution. Yet most NZ marketers still optimise to numbers no one believes.",
-      "This piece lays out the modern measurement triangle: MMM for strategic allocation, incrementality testing for tactical decisions, and consented first-party data for activation. With practical examples from the Stitch and Stitch Predict client base.",
-      "Read the full piece on the Marketing Association resource hub.",
-    ],
+    kind: "Article",
+    excerpt: "MMM, incrementality testing, consented first-party data.",
     externalUrl: "https://marketing.org.nz/resource-hub/author/adnan-khan",
   },
 ];
 
-export const postBySlug = (slug: string) =>
-  thinkingPosts.find((p) => p.slug === slug);
+export const postBySlug = (slug: string) => thinkingPosts.find((p) => p.slug === slug);

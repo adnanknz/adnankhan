@@ -1,13 +1,13 @@
-// Stitch-era clients (2019-present) — primary 5-col wall
+// Stitch era (2019 to now)
 export const stitchClients = [
-  "Turners", "Mr Apple", "AA Smartfuel", "Tourism New Zealand", "RealNZ",
-  "Cardrona", "Treble Cone", "Coastguard NZ", "Skills Group", "Harrison Grierson",
-  "Kate Sylvester", "Real Thread", "Elave Skincare", "RestoreMe Clinic", "Trilogy",
-  "Merck Sharp & Dohme", "Juliette Hogan", "Lexus", "Vend", "Quinovic",
-  "Initio Insurance", "Spirit of Adventure", "CTS Tours", "Placemakers",
+  "Mr Apple", "Tourism New Zealand", "RealNZ", "Cardrona", "Treble Cone",
+  "Coastguard NZ", "Turners", "AA Smartfuel", "Trilogy", "Juliette Hogan",
+  "Kate Sylvester", "NZ Rugby", "Colliers", "NZ Sotheby's", "BNZ",
+  "Skills Group", "Harrison Grierson",
 ];
 
-// Pre-Stitch global work via krunch.co (2014-2019) — secondary dimmer row
+// krunch.co heritage (2014 to 2019)
 export const krunchClients = [
-  "Cisco", "Comvita", "Bank of New Zealand", "Bayleys", "Hyundai", "Canon", "Toyota", "Honda",
+  "Cisco", "Comvita", "Bank of New Zealand", "Bayleys",
+  "Hyundai", "Canon", "Toyota", "Honda",
 ];
