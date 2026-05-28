@@ -6,7 +6,7 @@ const Work = () => (
   <>
     <SEO
       title="Work — Adnan Khan"
-      description="18 years of digital transformation, martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai, Canon, Toyota, Honda and more."
+      description="18 years of martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai and Toyota."
       path="/work"
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },

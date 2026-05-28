@@ -17,7 +17,7 @@ const CaseStudies = () => (
   <>
     <SEO
       title="Case Studies — Adnan Khan"
-      description="Comvita 480% lead conversion. AA Smartfuel 8x ROAS. Turners triple TVNZ win + 2x Gold Effie. Mr Apple 150% database growth with Tealium. Cisco world-first integrated case study."
+      description="Comvita 480% lead conversion. AA Smartfuel 8x ROAS. Turners 2x Gold Effie + TVNZ Supreme. Mr Apple 150% database growth. Cisco world-first integration."
       path="/casestudies"
       jsonLd={caseStudies.map(articleLd)}
       breadcrumbs={[

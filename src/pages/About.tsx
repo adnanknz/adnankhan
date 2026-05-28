@@ -15,7 +15,7 @@ const About = () => (
   <>
     <SEO
       title="About Adnan Khan — Co-Founder, Stitch & Stitch Predict"
-      description="5th Facebook employee in APAC, ex-Microsoft, Founding Partner krunch.co. Now Co-Founder of Stitch and Stitch Predict. Chair, MA Digital SIG. IAB NZ AI Working Group Lead."
+      description="5th Facebook employee in APAC, ex-Microsoft, Founding Partner krunch.co. Co-Founder of Stitch and Stitch Predict. Chair, MA Digital SIG."
       path="/about"
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
