@@ -19,6 +19,45 @@ const faqJsonLd = {
   })),
 };
 
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE.url}/#person`,
+  name: "Adnan Khan",
+  jobTitle: "Co-Founder & Managing Partner, Stitch | Co-Founder, Stitch Predict",
+  url: `${SITE.url}/`,
+  image: `${SITE.url}/og-image.jpg`,
+  email: `mailto:${SITE.email}`,
+  telephone: SITE.phoneTel,
+  worksFor: [
+    { "@type": "Organization", name: "Stitch", url: SITE.stitch },
+    { "@type": "Organization", name: "Stitch Predict", url: SITE.stitchPredict },
+  ],
+  sameAs: [SITE.linkedin, SITE.facebook, SITE.aboutMe, SITE.stitch, SITE.stitchPredict],
+};
+
+const localBusinessLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE.url}/#localbusiness`,
+  name: "Adnan Khan Consulting",
+  url: `${SITE.url}/`,
+  image: `${SITE.url}/og-image.jpg`,
+  telephone: SITE.phoneTel,
+  email: `mailto:${SITE.email}`,
+  priceRange: "$$$",
+  founder: { "@id": `${SITE.url}/#person` },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Ground Floor, 295 Parnell Road",
+    addressLocality: "Parnell, Auckland",
+    postalCode: "1052",
+    addressCountry: "NZ",
+  },
+  areaServed: ["NZ", "AU", "Global"],
+  geo: { "@type": "GeoCoordinates", latitude: -36.8485, longitude: 174.7633 },
+};
+
 const credentials = [
   "Ex-Meta", "Ex-Microsoft", "TVNZ Marketing Awards Supreme Winner",
   "2x Gold Effie 2022", "Global Effie Finalist", "LinkedIn Top Voice",
@@ -45,10 +84,10 @@ const teaserCases = [
 const Index = () => (
   <>
     <SEO
-      title="Adnan Khan — Digital Transformation, AI & Marketing Consultant, Auckland"
-      description="Co-Founder of Stitch and Stitch Predict. 18+ years across Meta, Microsoft, krunch.co. 2x Gold Effie 2022, TVNZ Marketing Awards Supreme Winner. Helping NZ and global brands grow with data, AI, and martech."
+      title="Adnan Khan — AI & Marketing Consultant in Auckland"
+      description="Co-Founder of Stitch and Stitch Predict. 18+ years across Meta and Microsoft. Helping NZ and global brands grow with AI, data, and martech."
       path="/"
-      jsonLd={[faqJsonLd]}
+      jsonLd={[personLd, localBusinessLd, faqJsonLd]}
     />
     <Hero />
 
