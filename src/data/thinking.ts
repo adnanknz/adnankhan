@@ -11,6 +11,16 @@ export interface ThinkingPost {
 
 export const thinkingPosts: ThinkingPost[] = [
   {
+    slug: "nz-marketing-meet-the-founder-stitch-2026",
+    title: "Meet the founder: Stitch",
+    date: "2026-10-01",
+    dateLabel: "1 Oct 2026",
+    source: "NZ Marketing",
+    kind: "Interview",
+    excerpt: "Adnan Khan and Simon Wedde on why they started Stitch, connecting fragmented martech and customer data to performance media, and what they've learned about hiring, capacity and client conversations.",
+    externalUrl: "https://nzmarketingmag.co.nz/meet-the-founder-stitch/",
+  },
+  {
     slug: "iab-future-of-marketing-ai-2026",
     title: "The Future of Marketing & AI",
     date: "2026-03-05",

@@ -72,7 +72,11 @@ const About = () => (
             <section className="hairline-t pt-6">
               <p className="eyebrow mb-3">Recent speaking and writing</p>
               <p>
-                Moderator at "The Future of Marketing & AI" (IAB NZ × Google Auckland, 5 March 2026), moderator of the
+                Interviewed with Simon Wedde for NZ Marketing's{" "}
+                <a href="https://nzmarketingmag.co.nz/meet-the-founder-stitch/" target="_blank" rel="noopener noreferrer" className="link-underline text-oxblood">
+                  "Meet the founder" series
+                </a>{" "}
+                (October 2026), moderator at "The Future of Marketing & AI" (IAB NZ × Google Auckland, 5 March 2026), moderator of the
                 AI panel at Marketing Association's Digital Day Out 2025, contributor and quoted source in IAB NZ's
                 "Kiwi Search Habits 2025" report, contributor to IAB NZ's Q4 2025 and Q1 2026 AI Tools Reports,
                 co-author of IAB NZ's "Zero, First, Second, Third: A Plain-English Guide to Data for Everyone" (2026),
