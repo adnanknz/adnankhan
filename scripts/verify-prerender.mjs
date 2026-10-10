@@ -32,7 +32,7 @@ export function verifyPrerender(dist, routes) {
   assert.match(read("/now"), /Last updated:/);
   for (const r of routes.filter((r) => r.startsWith("/notes/"))) {
     assert.ok(schemas(read(r)).some((s) => s["@type"] === "BlogPosting"), `${r}: BlogPosting`);
-    assert.doesNotMatch(read(r), /name="robots"/, `${r}: indexable`);
+    assert.doesNotMatch(read(r), /noindex/, `${r}: indexable`);
   }
   console.log(`Verified ${routes.length + 1} HTML files: 12 FAQs, 5 Services, ProfilePage, thinking noindex, ${blocks} valid JSON-LD blocks, self-referencing alternates and zero em dashes.`);
   const assets = path.join(dist, "assets");
