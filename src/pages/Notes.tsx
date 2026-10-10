@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
+import { Helmet } from "react-helmet-async";
 
 const Notes = () => (
   <>
-    <Navbar />
-    <main id="main" className="min-h-[80vh] flex items-center px-5 lg:px-8 pt-32 pb-24">
+    <Helmet>
+      <meta name="robots" content="noindex" />
+    </Helmet>
+    <section className="min-h-[80vh] flex items-center px-5 lg:px-8 pt-32 pb-24">
       <div className="container mx-auto max-w-3xl">
         <p className="eyebrow mb-6">Notes</p>
         <h1 className="font-display-1 text-ink mb-8" style={{ fontSize: "clamp(56px, 10vw, 160px)" }}>
@@ -15,7 +17,7 @@ const Notes = () => (
         </p>
         <Link to="/" className="link-underline mono text-ink">← Back to home</Link>
       </div>
-    </main>
+    </section>
   </>
 );
 

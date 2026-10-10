@@ -1,17 +1,6 @@
 import SEO from "@/components/SEO";
 import { SITE } from "@/data/site";
 import ContactForm from "@/components/sections/Contact";
-import { faqs } from "@/data/faqs";
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
 const Contact = () => (
   <>
@@ -19,7 +8,6 @@ const Contact = () => (
       title="Contact Adnan Khan — Auckland, New Zealand"
       description="Email adnan.khan@me.com. Phone +64 27 513 0110. Auckland-based. Available for digital transformation, AI strategy, martech, MMM, and advisory work."
       path="/contact"
-      jsonLd={[faqJsonLd]}
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
         { name: "Contact", url: `${SITE.url}/contact` },

@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 
 const NotFound = () => (
   <>
     <SEO title="Not found · Adnan Khan" description="The page you were looking for doesn't exist." path="/404" />
+    <Helmet>
+      <meta name="robots" content="noindex" />
+    </Helmet>
     <section className="min-h-[70vh] flex items-center justify-center px-5 text-center pt-24">
       <div>
         <p className="mono mb-4">ERROR / 404</p>

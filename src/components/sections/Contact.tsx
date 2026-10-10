@@ -38,7 +38,7 @@ const FloatField = ({
       <label
         htmlFor={id}
         className={`absolute left-0 mono pointer-events-none transition-all ${
-          float ? "top-0 text-[10px] text-oxblood" : "top-7 text-[12px] text-hairline"
+          float ? "top-0 text-[10px] text-oxblood" : "top-7 text-[12px] text-ink/60"
         }`}
       >
         {label}
