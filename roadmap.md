@@ -1,0 +1,5 @@
+- [ ] Correct per-page SEO and structured data; preserve prerendering.
+- [ ] Expand FAQ and data-driven services using supplied facts.
+- [ ] Update AI discovery files, Now page and indexable sitemap.
+- [ ] Remove GSAP, Lenis and unused Splitting; preserve reveals and styling.
+- [ ] Verify rendered HTML, JSON-LD, punctuation and bundle sizes.
