@@ -7,7 +7,7 @@ import { faqs } from "@/data/faqs";
 import { services } from "@/data/services";
 import { caseStudies } from "@/data/caseStudies";
 import { thinkingPosts } from "@/data/thinking";
-import { SITE } from "@/data/site";
+import { SITE, yearsExperience } from "@/data/site";
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -21,17 +21,17 @@ const faqJsonLd = {
 
 const credentials = [
   "Ex-Meta", "Ex-Microsoft", "TVNZ Marketing Awards Supreme Winner",
-  "2x Gold Effie 2022", "Global Effie Finalist", "LinkedIn Top Voice",
+  "3x Gold Effie", "Global Effie Finalist", "LinkedIn Top Voice",
   "IAB NZ AI Working Group Lead", "Chair, MA Digital SIG",
 ];
 
 const achievements = [
-  ["18+", "years digital transformation, media, AI"],
+  [`${yearsExperience()}+`, "years digital transformation, media, AI"],
   ["5th", "Facebook employee in APAC"],
   ["1st", "Account Manager in Facebook APAC"],
   ["Founding", "Partner, krunch.co (2014–2019)"],
   ["700%", "return successful exit, ListingLogic"],
-  ["4", "Effies (2x Gold + finalist) + 3 TVNZ awards 2022"],
+  ["4", "Effies (3x Gold + Global finalist) + 3 TVNZ awards 2022"],
 ];
 
 const teaserCases = [
@@ -46,7 +46,7 @@ const Index = () => (
   <>
     <SEO
       title="Adnan Khan — AI & Marketing Consultant in Auckland"
-      description="Co-Founder of Stitch and Stitch Predict. 18+ years across Meta and Microsoft. Helping NZ and global brands grow with AI, data, and martech."
+      description={`Co-Founder of Stitch and Stitch Predict. ${yearsExperience()}+ years across Meta and Microsoft. Helping NZ and global brands grow with AI, data, and martech.`}
       path="/"
       jsonLd={[faqJsonLd]}
     />
@@ -119,7 +119,7 @@ const Index = () => (
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Achievements</p>
         <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
-          Eighteen years, six markers.
+          {yearsExperience()} years, six markers.
         </h2>
         <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
           {achievements.map(([k, v]) => (

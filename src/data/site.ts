@@ -1,6 +1,7 @@
 export const SITE = {
   url: "https://adnan.co.nz",
   name: "Adnan Khan",
+  careerStart: 2007,
   email: "adnan.khan@me.com",
   phone: "+64 27 513 0110",
   phoneTel: "+64275130110",
@@ -22,3 +23,5 @@ export const SITE = {
   iab: "https://www.iab.org.nz/",
   aboutMe: "https://about.me/adnank",
 };
+
+export const yearsExperience = (): number => new Date().getFullYear() - SITE.careerStart;

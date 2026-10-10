@@ -1,8 +1,8 @@
 import SEO from "@/components/SEO";
-import { SITE } from "@/data/site";
+import { SITE, yearsExperience } from "@/data/site";
 
 const paragraphs = [
-  "Adnan Khan is Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict, both based in Auckland, New Zealand. Over the last 18 years he has led digital transformation, customer data, marketing technology and AI work for some of the most demanding brands in the world.",
+  `Adnan Khan is Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict, both based in Auckland, New Zealand. Over the last ${yearsExperience()} years he has led digital transformation, customer data, marketing technology and AI work for some of the most demanding brands in the world.`,
   "He joined Facebook in August 2009 as the 5th Facebook employee in APAC and the first Account Manager in Facebook APAC, becoming one of the first 200 sales employees globally. He went on to lead Facebook in New Zealand as Country Manager between 2013 and 2014, after senior client partner and account roles across ANZ. Before that he spent a year at Microsoft Australia as a Technical Account Manager, and started his career as a digital media planner and buyer at Initiative Media in Sydney.",
   "In 2014 he co-founded krunch.co as a founding partner, leading digital and then business development and innovation through to 2019. The krunch.co team pioneered the ANZ-first integration of Facebook Lead Ads with Marketo, built the first people-based attribution product in ANZ, delivered the first SkyTV + Telescope + Facebook live TV integration, and produced the world's first global integrated digital transformation, marketing automation, digital media, people-based attribution and business intelligence case study, for Cisco. Heritage clients from this era include Cisco, Comvita, Bank of New Zealand, Bayleys, Hyundai, Canon, Toyota and Honda.",
   "He led the Comvita Marketo transformation that delivered a 480% increase in new lead conversion in six months and a 255% uplift in average sale value on nurture, with email becoming the second-highest revenue source online.",

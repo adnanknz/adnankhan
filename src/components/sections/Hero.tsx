@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import MagneticButton from "@/components/MagneticButton";
+import { yearsExperience } from "@/data/site";
 
 const Hero = () => {
   const root = useRef<HTMLDivElement>(null);
@@ -30,7 +31,7 @@ const Hero = () => {
     >
       <div className="container mx-auto w-full grid grid-cols-12 gap-x-6">
         <p className="mono col-span-12 mb-8 lg:mb-16">
-          AUCKLAND −36.85°, 174.76° / EST. 2009 / VOL. 03
+          AUCKLAND −36.85°, 174.76° / EST. 2007 / VOL. 03
         </p>
       </div>
 
@@ -56,7 +57,7 @@ const Hero = () => {
 
       <div className="container mx-auto w-full grid grid-cols-12 gap-x-6 mt-12 lg:mt-20 items-end">
         <p className="col-span-12 lg:col-span-6 text-ink/85 max-w-[56ch] text-[16px] leading-[1.6]">
-          Adnan Khan. Co-Founder of Stitch and Stitch Predict. 18 years across Meta, Microsoft,
+          Adnan Khan. Co-Founder of Stitch and Stitch Predict. {yearsExperience()} years across Meta, Microsoft,
           krunch.co. Auckland, working globally.
         </p>
 
