@@ -6,7 +6,7 @@ const Work = () => (
   <>
     <SEO
       title="Clients & Selected Work | Adnan Khan, Auckland"
-      description={`${yearsExperience()} years of martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai and Toyota.`}
+      description={`${yearsExperience()} years of martech, customer data, AI and media work for Turners, Tourism New Zealand, Mr Apple, World Vision, Serko, RealNZ, Comvita, Cisco and more.`}
       path="/work"
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
@@ -27,7 +27,7 @@ const Work = () => (
           <p className="eyebrow mb-6">Stitch era · 2019 – now</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 hairline-t hairline-l">
             {stitchClients.map((c) => (
-              <div key={c} className="hairline-r hairline-b px-4 py-8 flex items-center justify-center text-center">
+              <div key={c} className="hairline-r hairline-b px-4 py-8 flex items-center justify-center text-center last:col-span-2 lg:last:col-span-1">
                 <span className="font-sans font-medium text-ink text-[14px] uppercase tracking-[0.06em]">{c}</span>
               </div>
             ))}
