@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { verifyPrerender } from "./verify-prerender.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
@@ -43,3 +44,4 @@ for (const url of routes) {
   write(file, page(url));
 }
 write(path.join(dist, "404.html"), page("/__not-found__"));
+verifyPrerender(dist, routes);

@@ -3,3 +3,4 @@
 - Keep extended service content in src/data/services.ts and FAQs in src/data/faqs.ts; pages, structured data and the full AI profile consume those sources so answers stay in sync.
 - Use native browser scrolling and IntersectionObserver reveals only; the shared action button has no motion dependency to keep prerendering simple and the client bundle small.
 - Preserve the static public/sitemap.xml mechanism; exclude noindex routes and use only authoritative page-specific lastmod timestamps, never build-date fallbacks.
+- Run scripts/verify-prerender.mjs at the end of prerendering to reject invalid metadata or JSON-LD and report the emitted main bundle size.
