@@ -13,10 +13,10 @@ const Contact = () => (
         { name: "Contact", url: `${SITE.url}/contact` },
       ]}
     />
-    <article className="pt-32 pb-12 px-5 lg:px-8">
+    <article className="pt-32 pb-12">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Contact</p>
-        <h1 className="font-display-1 text-ink mb-8 max-w-[18ch]" style={{ fontSize: "clamp(56px, 9vw, 144px)" }}>
+        <h1 className="font-display-1 text-ink mb-8 max-w-[18ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Get in touch.
         </h1>
         <p className="text-ink/85 text-[18px] leading-[1.6] max-w-[64ch] mb-12">

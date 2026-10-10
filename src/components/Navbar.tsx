@@ -17,7 +17,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -25,32 +25,31 @@ const Navbar = () => {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-paper/85 backdrop-blur-md hairline-b py-2" : "bg-transparent py-4"
+        className={`fixed top-0 inset-x-0 z-50 transition-colors duration-200 backdrop-blur-md ${
+          scrolled ? "bg-bone/80 border-b border-hairline" : "bg-paper/60 border-b border-transparent"
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between px-5 lg:px-8">
-          <Link to="/" className="group inline-flex items-baseline" aria-label="Adnan Khan — home">
-            <span
-              className="font-serif font-black text-oxblood text-2xl leading-none relative"
-              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}
-            >
-              AK
-              <span className="absolute left-0 right-0 -bottom-1 h-px bg-sienna" />
-            </span>
+        <div className="container mx-auto flex h-16 items-center justify-between">
+          <Link to="/" className="text-[17px] font-semibold tracking-tight text-ink" aria-label="Adnan Khan — home">
+            Adnan Khan
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
             {links.map((l) => (
               <NavLink
                 key={l.to}
                 to={l.to}
                 className={({ isActive }) =>
-                  `text-[12px] tracking-[0.06em] uppercase font-medium link-underline ${
-                    isActive ? "text-oxblood" : "text-ink"
+                  `px-3 py-2 rounded-md text-[14px] font-medium transition-colors hover:text-ink hover:bg-surface ${
+                    isActive ? "text-ink" : "text-subtle"
                   }`
                 }
               >
@@ -59,49 +58,44 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="ml-2 inline-flex items-center bg-oxblood text-paper text-[12px] tracking-[0.06em] uppercase font-medium px-4 py-2 rounded-[4px] hover:bg-oxblood/90 transition-colors"
+              className="ml-3 inline-flex items-center rounded-lg bg-ink text-bone text-[14px] font-medium px-4 py-2 hover:bg-oxblood transition-colors"
             >
               Work with me
             </Link>
           </nav>
 
           <button
-            className="lg:hidden text-ink"
+            className="lg:hidden text-ink min-h-11 min-w-11 inline-flex items-center justify-center -mr-2"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
+            aria-expanded={open}
           >
-            <Menu size={24} />
+            <Menu size={22} />
           </button>
         </div>
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[60] bg-oxblood text-paper flex flex-col">
-          <div className="flex items-center justify-between px-5 lg:px-8 py-4">
-            <span
-              className="font-serif font-black text-paper text-2xl"
-              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}
-            >
-              AK
-            </span>
-            <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-paper">
-              <X size={28} />
+        <div className="fixed inset-0 z-[60] bg-bone text-ink flex flex-col" role="dialog" aria-modal="true" aria-label="Menu">
+          <div className="container mx-auto flex h-16 items-center justify-between border-b border-hairline">
+            <span className="text-[17px] font-semibold tracking-tight">Adnan Khan</span>
+            <button onClick={() => setOpen(false)} aria-label="Close menu" className="min-h-11 min-w-11 inline-flex items-center justify-center -mr-2">
+              <X size={22} />
             </button>
           </div>
-          <nav className="flex-1 flex flex-col justify-center gap-5 px-8" aria-label="Mobile">
+          <nav className="container mx-auto flex-1 flex flex-col gap-2 pt-10" aria-label="Mobile">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="font-serif text-4xl font-bold"
-                style={{ fontVariationSettings: '"opsz" 96' }}
+                className="text-[36px] font-semibold tracking-[-0.03em] py-1 hover:text-oxblood transition-colors"
               >
                 {l.label}
               </Link>
             ))}
           </nav>
-          <p className="mono text-paper/60 px-8 pb-8">AUCKLAND -36.85°, 174.76°</p>
+          <p className="container mx-auto mono pb-8">AUCKLAND -36.85°, 174.76°</p>
         </div>
       )}
     </>

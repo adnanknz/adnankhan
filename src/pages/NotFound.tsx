@@ -11,7 +11,7 @@ const NotFound = () => (
     <section className="min-h-[70vh] flex items-center justify-center px-5 text-center pt-24">
       <div>
         <p className="mono mb-4">ERROR / 404</p>
-        <h1 className="font-display-1 text-oxblood mb-6" style={{ fontSize: "clamp(80px, 16vw, 200px)" }}>
+        <h1 className="font-display-1 text-oxblood mb-6" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Lost.
         </h1>
         <Link to="/" className="link-underline text-ink mono">← Return home</Link>

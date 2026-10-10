@@ -14,10 +14,10 @@ const Services = () => (
         { name: "Services", url: `${SITE.url}/services` },
       ]}
     />
-    <article className="pt-32 pb-24 px-5 lg:px-8">
+    <article className="pt-32 pb-24">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Services</p>
-        <h1 className="font-display-1 text-ink mb-16 max-w-[18ch]" style={{ fontSize: "clamp(56px, 9vw, 168px)" }}>
+        <h1 className="font-display-1 text-ink mb-16 max-w-[18ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Services.
         </h1>
 
@@ -25,7 +25,7 @@ const Services = () => (
           {services.map((s) => (
             <section key={s.n} id={s.slug} className="grid grid-cols-12 gap-x-6 gap-y-6 hairline-t pt-10 scroll-mt-32">
               <div className="col-span-12 lg:col-span-3">
-                <p className="font-serif font-bold text-oxblood text-5xl">{s.n}</p>
+                <p className="font-semibold tracking-tight text-oxblood text-5xl">{s.n}</p>
               </div>
               <div className="col-span-12 lg:col-span-9">
                 <h2 className="font-display-2 text-ink mb-6" style={{ fontSize: "clamp(28px, 3.6vw, 52px)" }}>

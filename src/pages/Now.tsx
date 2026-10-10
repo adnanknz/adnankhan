@@ -12,13 +12,13 @@ const Now = () => (
         { name: "Now", url: `${SITE.url}/now` },
       ]}
     />
-    <article className="pt-32 pb-24 px-5 lg:px-8">
+    <article className="pt-32 pb-24">
       <div className="container mx-auto max-w-3xl">
         <p className="eyebrow mb-6">What I'm doing now</p>
-        <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(56px, 9vw, 168px)" }}>
+        <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Now.
         </h1>
-        <p className="text-ink/90 text-[18px] leading-[1.7] mb-8">
+        <p className="text-ink/85 text-[18px] leading-[1.7] mb-8">
           Right now I'm focused on scaling Stitch Predict, leading the IAB NZ AI Working Group,
           chairing the MA Digital SIG, and helping a small group of NZ and global brands navigate
           the move from cookies to causal, AI-driven measurement. Based in Auckland.

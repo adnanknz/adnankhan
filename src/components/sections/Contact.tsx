@@ -100,19 +100,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-40 px-5 lg:px-8 bg-paper">
+    <section id="contact" className="py-20 lg:py-28 bg-paper">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Let's talk</p>
         <h2
           className="font-display-1 text-ink mb-16 lg:mb-24"
-          style={{ fontSize: "clamp(56px, 11vw, 180px)" }}
+          style={{ fontSize: "clamp(40px, 6vw, 72px)" }}
         >
           Get in touch.
         </h2>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
           <div className="col-span-12 lg:col-span-5 space-y-10">
-            <p className="font-lede text-ink/85 max-w-[28ch]" style={{ fontSize: "clamp(22px, 2.4vw, 34px)" }}>
+            <p className="text-subtle font-normal leading-snug max-w-[28ch]" style={{ fontSize: "clamp(22px, 2.4vw, 34px)" }}>
               Reply within 24 hours, usually faster. Auckland based, working globally.
             </p>
             <div className="space-y-3 text-[15px]">
@@ -134,13 +134,13 @@ const Contact = () => {
               <div className="py-12">
                 <p
                   className="font-display-2 text-ink"
-                  style={{ fontSize: "clamp(36px, 5vw, 72px)" }}
+                  style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}
                 >
                   Thanks. I'll be in touch shortly.
                 </p>
               </div>
             ) : (
-              <form onSubmit={submit} className="space-y-2">
+              <form onSubmit={submit} className="card p-6 sm:p-8 space-y-2">
                 <FloatField id="name" label="NAME" value={form.name} onChange={(v) => setForm({ ...form, name: v })} maxLength={100} />
                 <FloatField id="email" label="EMAIL" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} maxLength={255} />
                 <FloatField id="company" label="COMPANY (OPTIONAL)" value={form.company} onChange={(v) => setForm({ ...form, company: v })} maxLength={120} />
@@ -153,7 +153,7 @@ const Contact = () => {
                 />
                 <div className="pt-8">
                   <MagneticButton type="submit" variant="primary" fullWidth disabled={sending}>
-                    <span className="font-serif font-bold text-[18px] tracking-normal normal-case">
+                    <span className="text-[15px] normal-case">
                       {sending ? "Sending…" : "Send →"}
                     </span>
                   </MagneticButton>

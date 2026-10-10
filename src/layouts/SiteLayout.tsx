@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/sections/SiteFooter";
@@ -136,13 +137,35 @@ const websiteLd = {
   inLanguage: "en-NZ",
 };
 
-const SiteLayout = ({ children }: { children: ReactNode }) => (
+const useReveal = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const els = Array.from(document.querySelectorAll<HTMLElement>("#main section, #main article > div > *"));
+    const vh = window.innerHeight;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    els.forEach((el) => {
+      if (el.getBoundingClientRect().top < vh) return; // above the fold: no animation
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+    return () => io.disconnect();
+  }, [pathname]);
+};
+
+const SiteLayout = ({ children }: { children: ReactNode }) => {
+  useReveal();
+  return (
   <>
     <Helmet>
       <html lang="en-NZ" />
       <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
       <meta httpEquiv="content-language" content="en-NZ" />
-      <meta name="theme-color" content="#6B1F2A" />
+      <meta name="theme-color" content="#FAFAFA" />
       <meta name="author" content="Adnan Khan" />
       <link rel="alternate" hrefLang="en-NZ" href={`${SITE.url}/`} />
       <link rel="alternate" hrefLang="x-default" href={`${SITE.url}/`} />
@@ -157,6 +180,7 @@ const SiteLayout = ({ children }: { children: ReactNode }) => (
     <main id="main" className="relative z-10">{children}</main>
     <SiteFooter />
   </>
-);
+  );
+};
 
 export default SiteLayout;

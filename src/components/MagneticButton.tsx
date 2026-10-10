@@ -30,17 +30,15 @@ const MagneticButton = ({
     if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
+    // Very subtle magnetic pull (max ~3px)
     const onMove = (e: globalThis.MouseEvent) => {
       const rect = el.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = e.clientX - cx;
-      const dy = e.clientY - cy;
-      const dist = Math.hypot(dx, dy);
-      if (dist < 80) {
-        gsap.to(el, { x: dx * 0.08, y: dy * 0.08, duration: 0.2, ease: "power2.out" });
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      if (Math.hypot(dx, dy) < 60) {
+        gsap.to(el, { x: dx * 0.04, y: dy * 0.04, duration: 0.25, ease: "power2.out" });
       } else {
-        gsap.to(el, { x: 0, y: 0, duration: 0.4, ease: "elastic.out(1,0.4)" });
+        gsap.to(el, { x: 0, y: 0, duration: 0.3, ease: "power2.out" });
       }
     };
     window.addEventListener("mousemove", onMove);
@@ -48,11 +46,11 @@ const MagneticButton = ({
   }, []);
 
   const base =
-    "inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[14px] font-semibold tracking-[0.04em] uppercase rounded-[2px] transition-colors duration-200";
+    "inline-flex items-center justify-center gap-2 px-5 py-3 text-[15px] font-medium rounded-lg transition-colors duration-200";
   const styles =
     variant === "primary"
-      ? "bg-oxblood text-paper hover:bg-oxblood-dark"
-      : "bg-transparent text-ink border border-hairline hover:border-oxblood hover:text-oxblood";
+      ? "bg-ink text-bone hover:bg-oxblood"
+      : "bg-bone text-ink border border-hairline hover:border-ink/40";
 
   const cls = `${base} ${styles} ${fullWidth ? "w-full" : ""} ${className}`;
 

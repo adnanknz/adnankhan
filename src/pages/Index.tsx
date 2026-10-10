@@ -53,34 +53,36 @@ const Index = () => (
     <Hero />
 
     {/* Credentials strip */}
-    <section className="bg-oxblood text-paper py-6 px-5 lg:px-8 overflow-hidden">
+    <section aria-label="Credentials" className="pb-16">
       <div className="container mx-auto">
-        <p className="mono text-paper text-[12px] tracking-[0.18em] flex flex-wrap gap-x-3 gap-y-1 justify-center text-center">
-          {credentials.map((c, i) => (
-            <span key={c}>
-              {c}{i < credentials.length - 1 && <span className="text-sienna mx-2" aria-hidden>·</span>}
-            </span>
+        <ul className="flex flex-wrap gap-2">
+          {credentials.map((c) => (
+            <li key={c} className="rounded-full border border-hairline bg-bone px-3 py-1.5 text-[13px] font-medium text-subtle">
+              {c}
+            </li>
           ))}
-        </p>
+        </ul>
       </div>
     </section>
 
     {/* What I do */}
-    <section id="what-i-do" className="py-24 lg:py-32 px-5 lg:px-8 bg-paper">
+    <section id="what-i-do" className="py-20 lg:py-28 border-t border-hairline">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">What I do</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-10" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Five practices, one operator.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 hairline-t hairline-l">
-          {services.map((s) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+          {services.map((s, i) => (
             <Link
               key={s.slug}
               to={`/services#${s.slug}`}
-              className="group hairline-r hairline-b p-6 flex flex-col justify-between min-h-[200px] hover:bg-bone transition-colors"
+              className={`card group p-6 flex flex-col justify-between min-h-[180px] ${
+                i < 2 ? "lg:col-span-3 lg:min-h-[220px]" : "lg:col-span-2"
+              }`}
             >
               <span className="mono text-oxblood">{s.n}</span>
-              <span className="font-serif font-bold text-ink text-[22px] leading-tight group-hover:text-oxblood transition-colors">
+              <span className={`font-semibold tracking-tight text-ink leading-tight group-hover:text-oxblood transition-colors ${i < 2 ? "text-[26px]" : "text-[20px]"}`}>
                 {s.title}
               </span>
             </Link>
@@ -90,24 +92,26 @@ const Index = () => (
     </section>
 
     {/* Recent work */}
-    <section id="recent-work" className="py-24 lg:py-32 px-5 lg:px-8 bg-bone">
+    <section id="recent-work" className="py-20 lg:py-28 border-t border-hairline">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Recent work</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-10" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Five proofs.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {teaserCases.map((c) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {teaserCases.map((c, i) => (
             <Link
               key={c.slug}
               to={`/casestudies#${c.slug}`}
-              className="group block bg-paper p-6 hairline-t hairline-b hairline-l hairline-r hover:-translate-y-1 transition-transform"
+              className={`card group p-6 flex flex-col justify-between min-h-[180px] ${i === 0 ? "sm:col-span-2 lg:row-span-2 lg:min-h-[376px]" : ""}`}
             >
-              <p className="eyebrow mb-3">{c.t}</p>
-              <p className="font-serif font-bold text-ink text-[20px] leading-tight group-hover:text-oxblood transition-colors">
-                {c.m}
-              </p>
-              <span className="mono text-sienna mt-6 inline-block">Read →</span>
+              <div>
+                <p className="eyebrow mb-3">{c.t}</p>
+                <p className={`font-semibold tracking-tight text-ink leading-tight group-hover:text-oxblood transition-colors ${i === 0 ? "text-[32px] lg:text-[40px]" : "text-[20px]"}`}>
+                  {c.m}
+                </p>
+              </div>
+              <span className="text-[14px] font-medium text-subtle group-hover:text-oxblood mt-6 inline-block transition-colors">Read →</span>
             </Link>
           ))}
         </div>
@@ -115,17 +119,17 @@ const Index = () => (
     </section>
 
     {/* Achievements */}
-    <section className="py-20 lg:py-28 px-5 lg:px-8 bg-paper">
+    <section className="py-20 lg:py-28 border-t border-hairline">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Achievements</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-10" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           {yearsExperience()} years, six markers.
         </h2>
-        <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+        <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {achievements.map(([k, v]) => (
-            <div key={k} className="hairline-t pt-4">
-              <dt className="font-serif font-bold text-oxblood text-5xl mb-2">{k}</dt>
-              <dd className="text-ink/85 text-[15px]">{v}</dd>
+            <div key={k} className="card p-6">
+              <dt className="font-semibold text-ink text-[44px] leading-none tracking-[-0.04em] mb-3">{k}</dt>
+              <dd className="text-subtle text-[14px]">{v}</dd>
             </div>
           ))}
         </dl>
@@ -133,48 +137,48 @@ const Index = () => (
     </section>
 
     {/* Built with */}
-    <section className="py-20 lg:py-24 px-5 lg:px-8 bg-bone hairline-t hairline-b">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        <a href={SITE.stitch} target="_blank" rel="noopener noreferrer" className="group block hairline-r-0 md:hairline-r p-8">
+    <section className="py-20 lg:py-24 border-t border-hairline">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href={SITE.stitch} target="_blank" rel="noopener noreferrer" className="card group block p-8">
           <p className="eyebrow mb-3">Co-Founder & Managing Partner</p>
-          <p className="font-serif font-bold text-ink text-5xl group-hover:text-oxblood transition-colors">Stitch</p>
-          <p className="text-ink/75 mt-4 text-[15px]">Auckland-based consultancy: media, marketing, advertising and data-driven technology.</p>
-          <span className="mono text-oxblood mt-6 inline-block link-underline">stitchtech.co →</span>
+          <p className="font-semibold tracking-[-0.03em] text-ink text-4xl group-hover:text-oxblood transition-colors">Stitch</p>
+          <p className="text-subtle mt-4 text-[15px]">Auckland-based consultancy: media, marketing, advertising and data-driven technology.</p>
+          <span className="mono text-oxblood mt-6 inline-block">stitchtech.co →</span>
         </a>
-        <a href={SITE.stitchPredict} target="_blank" rel="noopener noreferrer" className="group block p-8">
+        <a href={SITE.stitchPredict} target="_blank" rel="noopener noreferrer" className="card group block p-8">
           <p className="eyebrow mb-3">Co-Founder</p>
-          <p className="font-serif font-bold text-ink text-5xl group-hover:text-oxblood transition-colors">Stitch Predict</p>
-          <p className="text-ink/75 mt-4 text-[15px]">Marketing mix modelling SaaS. Cookieless, privacy-safe causal attribution using ML.</p>
-          <span className="mono text-oxblood mt-6 inline-block link-underline">stitchpredict.com →</span>
+          <p className="font-semibold tracking-[-0.03em] text-ink text-4xl group-hover:text-oxblood transition-colors">Stitch Predict</p>
+          <p className="text-subtle mt-4 text-[15px]">Marketing mix modelling SaaS. Cookieless, privacy-safe causal attribution using ML.</p>
+          <span className="mono text-oxblood mt-6 inline-block">stitchpredict.com →</span>
         </a>
       </div>
     </section>
 
     {/* Recent thinking */}
-    <section id="thinking" className="py-24 lg:py-32 px-5 lg:px-8 bg-paper">
+    <section id="thinking" className="py-20 lg:py-28 border-t border-hairline">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Recent thinking</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-10" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Articles, podcasts, talks.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {thinkingPosts.slice(0, 3).map((p) => (
             <a
               key={p.slug}
               href={p.externalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block bg-bone p-6 hairline-t hairline-b hairline-l hairline-r hover:-translate-y-1 transition-transform"
+              className="card group block p-6"
             >
-              <p className="mono text-oxblood text-[12px] mb-3">{p.dateLabel} · {p.kind}</p>
-              <h3 className="font-serif font-bold text-ink text-[22px] leading-tight group-hover:text-oxblood transition-colors">
+              <p className="mono text-oxblood mb-3">{p.dateLabel} · {p.kind}</p>
+              <h3 className="font-semibold tracking-tight text-ink text-[20px] leading-tight group-hover:text-oxblood transition-colors">
                 {p.title}
               </h3>
-              <p className="mono mt-4 text-ink/70 text-[12px]">{p.source}</p>
+              <p className="mono mt-4">{p.source}</p>
             </a>
           ))}
         </div>
-        <Link to="/thinking" className="mt-10 inline-block link-underline text-oxblood mono">All thinking →</Link>
+        <Link to="/thinking" className="mt-8 inline-block link-underline text-ink font-medium text-[15px]">All thinking →</Link>
       </div>
     </section>
 
