@@ -22,17 +22,24 @@ const About = () => (
         { name: "About", url: `${SITE.url}/about` },
       ]}
     />
-    <article className="pt-32 pb-24 px-5 lg:px-8">
+    <article className="pt-32 pb-24">
       <div className="container mx-auto">
-        <p className="eyebrow mb-6">About</p>
-        <h1 className="font-display-1 text-ink mb-12 max-w-[20ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
+        <div className="flex flex-col-reverse sm:flex-row sm:items-end gap-8 mb-14">
+          <div className="flex-1">
+            <p className="eyebrow mb-6">About</p>
+        <h1 className="font-display-1 text-ink max-w-[20ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           I help ambitious brands grow with technology and AI.
         </h1>
+          </div>
+          <div className="w-32 sm:w-44 lg:w-56 shrink-0 aspect-[4/5] overflow-hidden rounded-2xl border border-hairline bg-surface">
+            <img src="/adnan-khan-headshot.jpg" alt="Adnan Khan" width={448} height={560} className="size-full object-cover" />
+          </div>
+        </div>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          <div className="col-span-12 lg:col-span-8 space-y-6 text-ink/90 text-[17px] leading-[1.7] max-w-[64ch]">
+          <div className="col-span-12 lg:col-span-8 space-y-6 text-ink/85 text-[17px] leading-[1.7] max-w-[64ch]">
             {paragraphs.map((p, i) => (
-              <p key={i} className={i === 0 ? "" : ""}>{p}</p>
+              <p key={i}>{p}</p>
             ))}
 
             <section className="hairline-t pt-6 mt-8">

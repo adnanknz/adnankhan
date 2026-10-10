@@ -25,7 +25,7 @@ const CaseStudies = () => (
         { name: "Case Studies", url: `${SITE.url}/casestudies` },
       ]}
     />
-    <article className="pt-32 pb-24 px-5 lg:px-8">
+    <article className="pt-32 pb-24">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Case studies</p>
         <h1 className="font-display-1 text-ink mb-16 max-w-[18ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>

@@ -4,7 +4,7 @@ import {
 import { faqs } from "@/data/faqs";
 
 const FaqSection = () => (
-  <section id="faq" className="py-20 lg:py-28 px-5 lg:px-8 bg-paper">
+  <section id="faq" className="py-20 lg:py-28 bg-paper">
     <div className="container mx-auto">
       <div className="grid grid-cols-12 gap-x-6 mb-12">
         <p className="eyebrow col-span-12 lg:col-span-3 mb-4 lg:mb-0">Frequently asked</p>

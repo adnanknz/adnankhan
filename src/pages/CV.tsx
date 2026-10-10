@@ -29,7 +29,7 @@ const CV = () => (
         { name: "CV", url: `${SITE.url}/cv` },
       ]}
     />
-    <article className="pt-32 pb-24 px-5 lg:px-8">
+    <article className="pt-32 pb-24">
       <div className="container mx-auto max-w-4xl">
         <p className="eyebrow mb-6">CV</p>
         <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
