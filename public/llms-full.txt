@@ -102,3 +102,113 @@ World's first global integrated digital transformation, marketing automation, di
 - https://www.imanz.co.nz/our-agencies/stitch
 - https://marketing.org.nz/resource-hub/author/adnan-khan
 - https://www.iab.org.nz/
+
+
+## Services
+### Digital transformation
+Digital transformation connects data, technology and media with a strategy, skills and operating model that help a business work as one.
+
+Strategy, capability build, operating model. End-to-end programmes that move brands from disconnected channels to a coordinated data, technology and media stack.
+
+What's included:
+- Digital transformation strategy
+- Capability build
+- Operating model design
+- Connecting data, technology and media
+
+Related work:
+- [Turners](https://adnan.co.nz/casestudies#turners)
+- [Cisco](https://adnan.co.nz/casestudies#cisco)
+
+### Customer data platforms
+A customer data platform unifies first-party customer data into persistent profiles that marketing and other systems can use in real time.
+
+CDP selection, implementation, and activation. Tealium, mParticle, Segment, Salesforce CDP, Adobe Real-Time CDP, ActionIQ. Real-time data unification and audience activation.
+
+What's included:
+- CDP selection, implementation and activation
+- Real-time data unification
+- Audience activation
+- Tealium, mParticle, Segment, Salesforce CDP, Adobe Real-Time CDP and ActionIQ
+
+Related work:
+- [Mr Apple](https://adnan.co.nz/casestudies#mr-apple)
+
+### Marketing technology
+Marketing technology brings together the software and data a business uses to automate marketing and manage customer relationships.
+
+Martech stack design, Marketo, HubSpot, Braze, Klaviyo, Iterable. Marketing automation and lifecycle programmes that pay for themselves.
+
+What's included:
+- Martech stack design
+- Marketing automation
+- Lifecycle programmes
+- Marketo, HubSpot, Braze, Klaviyo and Iterable
+
+Related work:
+- [Comvita](https://adnan.co.nz/casestudies#comvita)
+
+### Media and advertising
+Media and advertising combines paid media strategy and execution to reach audiences and drive measurable revenue.
+
+Paid media strategy and execution. Meta, Google, TikTok, programmatic, retail media. Optimised for measurable revenue, not vanity.
+
+What's included:
+- Paid media strategy
+- Paid media execution
+- Meta, Google and TikTok
+- Programmatic and retail media
+
+Related work:
+- [AA Smartfuel](https://adnan.co.nz/casestudies#aa-smartfuel)
+
+### Marketing mix modelling
+Marketing mix modelling estimates how marketing channels and outside factors contribute to business outcomes using aggregated historical data.
+
+Stitch Predict (https://stitchpredict.com). Cookieless, privacy-safe causal attribution using ML. Models take 6 to 10 weeks to deploy, with ±6 to 10% variance, on 2 to 3 years of weekly variable data.
+
+What's included:
+- Stitch Predict marketing mix modelling
+- Cookieless, privacy-safe causal attribution using machine learning
+- 6 to 10 weeks to deploy, with ±6 to 10% variance
+- 2 to 3 years of weekly variable data
+
+Related work:
+- [Stitch Predict](https://stitchpredict.com)
+
+## FAQ
+### Who is Adnan Khan?
+Adnan Khan is Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict, both based in Auckland, New Zealand. He has 19+ years in digital transformation, customer data, marketing technology, and AI, including senior roles at Meta (Facebook) and Microsoft. He is the IAB NZ AI Working Group Lead and Chair of the Marketing Association Digital SIG.
+
+### What does Stitch do?
+Stitch is an Auckland-based consultancy specialising in media, marketing, advertising, and data-driven technology. It builds customer data platforms, marketing automation, advanced measurement, and AI workflows for NZ and global brands including Mr Apple, Comvita, Turners, AA Smartfuel, BNZ, Bayleys and more.
+
+### What is Stitch Predict?
+Stitch Predict is a marketing mix modelling SaaS platform co-founded by Adnan Khan and Simon Wedde in 2023. It isolates the causal impact of each marketing activity on business outcomes using large data and machine learning, with no reliance on cookies or device tracking.
+
+### How can I contact Adnan?
+Email adnan.khan@me.com, phone +64 27 513 0110, or message him on LinkedIn at https://www.linkedin.com/in/adnan2/.
+
+### Where is Adnan based?
+Adnan is based in Auckland, New Zealand. Stitch is at Ground Floor, 295 Parnell Road, Parnell, Auckland 1052.
+
+### What services does Adnan offer?
+Adnan offers digital transformation, customer data platforms, marketing technology, media and advertising, and marketing mix modelling. He also offers AI strategy and advisory.
+
+### What is marketing mix modelling (MMM)?
+Marketing mix modelling (MMM) is statistical modelling that estimates how much each marketing channel and outside factor contributes to sales or other outcomes, using aggregated historical data rather than user-level tracking. Stitch Predict models take 6 to 10 weeks to deploy, with ±6 to 10% variance, on 2 to 3 years of weekly variable data.
+
+### What is a customer data platform (CDP), and which ones does Adnan work with?
+A customer data platform (CDP) is software that unifies first-party customer data from many sources into persistent profiles that marketing and other systems can use in real time. Adnan works with Tealium, mParticle, Segment, Salesforce CDP, Adobe Real-Time CDP and ActionIQ.
+
+### What did Adnan do at Facebook (Meta)?
+Adnan joined Facebook in August 2009 as the 5th Facebook employee in APAC and first Account Manager in Facebook APAC, and was one of the first 200 sales employees globally. He later became Client Partner NZ and Country Manager NZ (2013 to 2014).
+
+### What awards has Adnan's work won?
+Adnan's work has won the TVNZ Marketing Awards 2022 Supreme Award and three Gold Effies. Recognition also includes TVNZ Excellence in Brand Transformation Strategy and Excellence in Consumer Products & Services Strategy, 2022 Gold Effies in Strategic Thinking and Retail, Global Effie Finalist 2023, and LinkedIn Top Voice in Digital Marketing.
+
+### Does Adnan speak at events?
+Yes, Adnan speaks at events, moderates industry panels and appears on podcasts. He moderated IAB NZ × Google’s “The Future of Marketing & AI” in March 2026 and the AI panel at the Marketing Association’s Digital Day Out 2025, was a University of Auckland BUSMGT 719 industry panellist, and a Marketing Masters podcast guest. Speaking enquiries are welcome via the contact page at https://adnan.co.nz/contact.
+
+### What industry roles does Adnan hold?
+Adnan is IAB NZ AI Working Group Lead and Chair of the Marketing Association NZ Digital SIG. He also contributes to the IAB NZ Emerging Technology Council and the IMANZ Innovation & Technology Group.
