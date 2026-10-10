@@ -5,4 +5,4 @@
 - [x] Verify all 22 routes with server rendering: 12 FAQs, 5 Service schemas, ProfilePage, thinking noindex, 152 valid JSON-LD blocks, unique title/description, matching alternates and zero em dashes; test suite and browser checks pass.
 - [ ] Measure the emitted after-change main JS bundle and inspect full production dist: blocked because automatic builds do not expose dist/dist-server in this sandbox and hosted preview requires authentication; published baseline is 560,986 bytes (182,039 gzip), and production prerender now reports verification and bundle size automatically.
 - [x] Keep closed FAQ answers in rendered HTML; both requested phrases verified outside scripts and open/close behaviour checked in the browser.
-- [x] Link the MMM paragraph's Stitch Predict name using service data; destination and displayed text verified.
+- [x] Link the MMM paragraph's Stitch Predict name using service data; destination and displayed text verified.- [x] Replace Stitch client list with the 35 supplied names, keep krunch list, balance the Work grid, refresh Work meta description and llms-full.txt client mentions.
