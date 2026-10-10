@@ -21,7 +21,6 @@ const ScrollToTop = () => {
   useIsoLayoutEffect(() => {
     if (hash) return; // let the browser jump to the anchor
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => ScrollTrigger.refresh());
   }, [pathname, hash]);
   return null;
 };

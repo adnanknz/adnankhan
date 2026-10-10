@@ -17,19 +17,29 @@
 ## Pages
 - [About](https://adnan.co.nz/about): Background and career.
 - [Work](https://adnan.co.nz/work): Clients and engagements.
-- [Services](https://adnan.co.nz/services): Practice areas.
+- [Services](https://adnan.co.nz/services): Digital transformation, CDPs, martech, media and marketing mix modelling.
 - [Case Studies](https://adnan.co.nz/casestudies): Comvita, AA Smartfuel, Turners, Mr Apple, Cisco.
 - [Thinking](https://adnan.co.nz/thinking): Articles, podcasts, talks.
+- [Now](https://adnan.co.nz/now): Current focus and industry work.
+- [CV](https://adnan.co.nz/cv): Career timeline, education and certifications.
+- [Uses](https://adnan.co.nz/uses): Hardware, software, AI tools and martech stack.
+- [Full profile](https://adnan.co.nz/llms-full.txt): Detailed biography, services and twelve FAQ answers.
 - [Contact](https://adnan.co.nz/contact): Contact details and form.
 
 ## Awards
 - TVNZ Marketing Awards 2022: Supreme Award Winner, Excellence in Brand Transformation Strategy, Excellence in Consumer Products & Services Strategy
-- 2x Gold Effie 2022 (Strategic Thinking, Retail)
+- Three Gold Effies (including 2022 Strategic Thinking and 2022 Retail)
 - Global Effie Finalist 2023
-- LinkedIn Top Voice — Digital Marketing
+- LinkedIn Top Voice: Digital Marketing
 
 ## Industry roles
 - IAB NZ AI Working Group Lead
 - Chair, Marketing Association Digital SIG
 - Member, IAB NZ Emerging Technology Council
 - Member, IMANZ Innovation & Technology Group
+
+## Key facts
+- 19 years of experience; career began in 2007.
+- 5th Facebook employee in APAC; first Account Manager in Facebook APAC.
+- Co-Founder of Stitch (2019) and Stitch Predict (2023).
+- IAB NZ AI Working Group Lead.
