@@ -38,17 +38,17 @@ const Hero = () => {
       <div className="container mx-auto w-full grid grid-cols-12 gap-x-6">
         <h1 className="col-span-12 font-display-1 text-ink select-none" style={{ lineHeight: 0.92, letterSpacing: "-0.025em" }}>
           <span className="block overflow-hidden">
-            <span data-word className="inline-block" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+            <span data-word className="inline-block" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
               Digital transformation,
             </span>
           </span>
           <span className="block overflow-hidden">
-            <span data-word className="inline-block" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+            <span data-word className="inline-block" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
               AI and growth for
             </span>
           </span>
           <span className="block overflow-hidden">
-            <span data-word className="inline-block text-oxblood" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+            <span data-word className="inline-block text-oxblood" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
               ambitious brands.
             </span>
           </span>

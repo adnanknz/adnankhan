@@ -17,7 +17,7 @@ const Services = () => (
     <article className="pt-32 pb-24 px-5 lg:px-8">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Services</p>
-        <h1 className="font-display-1 text-ink mb-16 max-w-[18ch]" style={{ fontSize: "clamp(56px, 9vw, 168px)" }}>
+        <h1 className="font-display-1 text-ink mb-16 max-w-[18ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Services.
         </h1>
 

@@ -66,10 +66,10 @@ const Index = () => (
     </section>
 
     {/* What I do */}
-    <section id="what-i-do" className="py-24 lg:py-32 px-5 lg:px-8 bg-paper">
+    <section id="what-i-do" className="py-20 lg:py-28 px-5 lg:px-8 bg-paper">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">What I do</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Five practices, one operator.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 hairline-t hairline-l">
@@ -90,10 +90,10 @@ const Index = () => (
     </section>
 
     {/* Recent work */}
-    <section id="recent-work" className="py-24 lg:py-32 px-5 lg:px-8 bg-bone">
+    <section id="recent-work" className="py-20 lg:py-28 px-5 lg:px-8 bg-bone">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Recent work</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Five proofs.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -118,7 +118,7 @@ const Index = () => (
     <section className="py-20 lg:py-28 px-5 lg:px-8 bg-paper">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Achievements</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           {yearsExperience()} years, six markers.
         </h2>
         <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
@@ -151,10 +151,10 @@ const Index = () => (
     </section>
 
     {/* Recent thinking */}
-    <section id="thinking" className="py-24 lg:py-32 px-5 lg:px-8 bg-paper">
+    <section id="thinking" className="py-20 lg:py-28 px-5 lg:px-8 bg-paper">
       <div className="container mx-auto">
         <p className="eyebrow mb-3">Recent thinking</p>
-        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="font-display-2 mb-12" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Articles, podcasts, talks.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

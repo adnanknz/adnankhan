@@ -16,7 +16,7 @@ const Work = () => (
     <article className="pt-32 pb-24 px-5 lg:px-8">
       <div className="container mx-auto">
         <p className="eyebrow mb-6">Work</p>
-        <h1 className="font-display-1 text-ink mb-8 max-w-[20ch]" style={{ fontSize: "clamp(56px, 9vw, 144px)" }}>
+        <h1 className="font-display-1 text-ink mb-8 max-w-[20ch]" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Selected work.
         </h1>
         <p className="text-ink/85 text-[18px] leading-[1.6] max-w-[64ch] mb-16">

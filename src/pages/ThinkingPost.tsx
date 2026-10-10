@@ -35,7 +35,7 @@ const ThinkingPost = () => {
         <div className="container mx-auto max-w-3xl">
           <Link to="/thinking" className="link-underline mono text-ink/70">← All thinking</Link>
           <p className="mono mt-6 mb-3 text-oxblood">{p.dateLabel} · {p.kind} · {p.source}</p>
-          <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(40px, 6vw, 96px)" }}>
+          <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
             {p.title}
           </h1>
           <p className="text-ink/90 text-[18px] leading-[1.7]">{p.excerpt}</p>

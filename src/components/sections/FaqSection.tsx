@@ -4,11 +4,11 @@ import {
 import { faqs } from "@/data/faqs";
 
 const FaqSection = () => (
-  <section id="faq" className="py-24 lg:py-32 px-5 lg:px-8 bg-paper">
+  <section id="faq" className="py-20 lg:py-28 px-5 lg:px-8 bg-paper">
     <div className="container mx-auto">
       <div className="grid grid-cols-12 gap-x-6 mb-12">
         <p className="eyebrow col-span-12 lg:col-span-3 mb-4 lg:mb-0">Frequently asked</p>
-        <h2 className="col-span-12 lg:col-span-9 font-display-2" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+        <h2 className="col-span-12 lg:col-span-9 font-display-2" style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}>
           Twelve plain answers.
         </h2>
       </div>

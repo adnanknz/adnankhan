@@ -83,7 +83,7 @@ const SiteFooter = () => {
       <div ref={wordmark} className="px-5 lg:px-8 -mb-[6vw]">
         <p
           className="font-display-1 text-oxblood leading-[0.85] whitespace-nowrap"
-          style={{ fontSize: "clamp(96px, 22vw, 320px)" }}
+          style={{ fontSize: "clamp(40px, 6vw, 72px)" }}
         >
           ADNAN KHAN
         </p>
