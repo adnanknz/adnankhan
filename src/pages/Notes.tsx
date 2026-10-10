@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 const Notes = () => (
   <>
     <Helmet>
+      <title>Notes · Adnan Khan</title>
       <meta name="robots" content="noindex" />
     </Helmet>
     <section className="min-h-[80vh] flex items-center pt-32 pb-24">

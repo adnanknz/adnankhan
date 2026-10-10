@@ -1,0 +1,1 @@
+- Routes are declared once in src/AppRoutes.tsx (client passes lazy pages, src/entry-server.tsx passes eager ones) and `npm run build` prerenders every route via scripts/prerender.mjs — so crawlers get full HTML without a headless browser; new routes must be added to both the page map and the `routes` list in entry-server.
