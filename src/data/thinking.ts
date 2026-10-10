@@ -4,7 +4,7 @@ export interface ThinkingPost {
   date: string;
   dateLabel: string;
   source: string;
-  kind: "Talk" | "Article" | "Podcast" | "Report" | "Panel";
+  kind: "Talk" | "Article" | "Podcast" | "Report" | "Panel" | "Interview";
   excerpt: string;
   externalUrl?: string;
 }
