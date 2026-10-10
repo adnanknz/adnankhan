@@ -23,7 +23,7 @@ const Thinking = () => {
     <>
       <SEO
         title="Talks, Reports & Articles on AI and Marketing | Adnan Khan"
-        description="Articles, podcasts and talks on AI, marketing mix modelling, customer data, and the future of measurement. Plus IAB NZ AI Working Group outputs."
+        description="Talks, interviews, reports and articles on AI, marketing mix modelling, customer data and measurement. Plus IAB NZ AI Working Group outputs."
         path="/thinking"
         breadcrumbs={[
           { name: "Home", url: `${SITE.url}/` },

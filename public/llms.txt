@@ -18,7 +18,7 @@
 - [Work](https://adnan.co.nz/work): Clients and engagements.
 - [Services](https://adnan.co.nz/services): Digital transformation, CDPs, martech, media and marketing mix modelling.
 - [Case Studies](https://adnan.co.nz/casestudies): Comvita, AA Smartfuel, Turners, Mr Apple, Cisco.
-- [Thinking](https://adnan.co.nz/thinking): Articles, podcasts, talks.
+- [Thinking](https://adnan.co.nz/thinking): Talks, interviews, reports and articles.
 - [Now](https://adnan.co.nz/now): Current focus and industry work.
 - [CV](https://adnan.co.nz/cv): Career timeline, education and certifications.
 - [Uses](https://adnan.co.nz/uses): Hardware, software, AI tools and martech stack.
