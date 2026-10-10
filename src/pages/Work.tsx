@@ -1,12 +1,12 @@
 import SEO from "@/components/SEO";
-import { SITE } from "@/data/site";
+import { SITE, yearsExperience } from "@/data/site";
 import { stitchClients, krunchClients } from "@/data/clients";
 
 const Work = () => (
   <>
     <SEO
       title="Work — Adnan Khan"
-      description="18 years of martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai and Toyota."
+      description={`${yearsExperience()} years of martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai and Toyota.`}
       path="/work"
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
@@ -20,7 +20,7 @@ const Work = () => (
           Selected work.
         </h1>
         <p className="text-ink/85 text-[18px] leading-[1.6] max-w-[64ch] mb-16">
-          18 years across global tech, transformation consultancies, and now Stitch. A few of the brands I've helped grow.
+          {yearsExperience()} years across global tech, transformation consultancies, and now Stitch. A few of the brands I've helped grow.
         </p>
 
         <section className="mb-20">

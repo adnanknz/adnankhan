@@ -1,9 +1,11 @@
+import { yearsExperience } from "@/data/site";
+
 export interface FAQ { q: string; a: string; }
 
 export const faqs: FAQ[] = [
   {
     q: "Who is Adnan Khan?",
-    a: "Adnan Khan is Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict, both based in Auckland, New Zealand. He has 18+ years in digital transformation, customer data, marketing technology, and AI, including senior roles at Meta (Facebook) and Microsoft. He is the IAB NZ AI Working Group Lead and Chair of the Marketing Association Digital SIG.",
+    a: `Adnan Khan is Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict, both based in Auckland, New Zealand. He has ${yearsExperience()}+ years in digital transformation, customer data, marketing technology, and AI, including senior roles at Meta (Facebook) and Microsoft. He is the IAB NZ AI Working Group Lead and Chair of the Marketing Association Digital SIG.`,
   },
   {
     q: "What does Stitch do?",
