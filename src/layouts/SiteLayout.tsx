@@ -66,7 +66,6 @@ const personLd = {
   ],
   sameAs: [
     SITE.linkedin,
-    SITE.facebook,
     SITE.aboutMe,
     SITE.stitch,
     SITE.stitchPredict,

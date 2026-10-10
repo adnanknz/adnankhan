@@ -18,7 +18,6 @@ const SiteFooter = () => {
 
   const social: [string, string][] = [
     ["LinkedIn", SITE.linkedin],
-    ["Facebook", SITE.facebook],
     ["About.me", SITE.aboutMe],
     ["Stitch", SITE.stitch],
     ["Stitch Predict", SITE.stitchPredict],

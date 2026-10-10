@@ -10,7 +10,6 @@
 - Email: adnan.khan@me.com
 - Phone: +64 27 513 0110
 - LinkedIn: https://www.linkedin.com/in/adnan2/
-- Facebook: https://www.facebook.com/khan
 - About.me: https://about.me/adnank
 - Stitch: https://stitchtech.co
 - Stitch Predict: https://stitchpredict.com
@@ -110,7 +109,6 @@ World's first global integrated digital transformation, marketing automation, di
 
 ## Verified profiles (sameAs)
 - https://www.linkedin.com/in/adnan2/
-- https://www.facebook.com/khan
 - https://about.me/adnank
 - https://stitchtech.co
 - https://stitchpredict.com
