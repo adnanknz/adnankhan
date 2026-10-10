@@ -16,7 +16,7 @@ const FaqSection = () => (
         {faqs.map((f, i) => (
           <AccordionItem key={i} value={`faq-${i}`} className="border-b border-hairline">
             <AccordionTrigger className="py-6 hover:no-underline group text-left">
-              <h3 className="font-serif font-bold text-ink group-hover:text-oxblood transition-colors text-[18px] lg:text-[22px] flex-1 text-left" style={{ letterSpacing: "-0.01em" }}>
+              <h3 className="font-semibold tracking-tight text-ink group-hover:text-oxblood transition-colors text-[18px] lg:text-[22px] flex-1 text-left" style={{ letterSpacing: "-0.01em" }}>
                 {f.q}
               </h3>
             </AccordionTrigger>

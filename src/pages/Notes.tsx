@@ -12,7 +12,7 @@ const Notes = () => (
         <h1 className="font-display-1 text-ink mb-8" style={{ fontSize: "clamp(56px, 10vw, 160px)" }}>
           Coming soon.
         </h1>
-        <p className="font-lede text-ink/80 max-w-[50ch] mb-12" style={{ fontSize: "clamp(20px, 2vw, 28px)" }}>
+        <p className="text-subtle font-normal leading-snug text-ink/80 max-w-[50ch] mb-12" style={{ fontSize: "clamp(20px, 2vw, 28px)" }}>
           Long-form essays on AI, measurement, and the marketing technology stack will live here.
         </p>
         <Link to="/" className="link-underline mono text-ink">← Back to home</Link>

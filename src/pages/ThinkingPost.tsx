@@ -38,7 +38,7 @@ const ThinkingPost = () => {
           <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(40px, 6vw, 96px)" }}>
             {p.title}
           </h1>
-          <p className="text-ink/90 text-[18px] leading-[1.7] dropcap">{p.excerpt}</p>
+          <p className="text-ink/90 text-[18px] leading-[1.7]">{p.excerpt}</p>
           <div className="mt-12 hairline-t pt-6">
             <a href={p.externalUrl} target="_blank" rel="noopener noreferrer" className="link-underline text-oxblood font-medium">
               Open source →

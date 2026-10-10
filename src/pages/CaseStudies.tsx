@@ -39,7 +39,7 @@ const CaseStudies = () => (
                 <div className="col-span-12 lg:col-span-7">
                   <p className="eyebrow mb-3">{c.client}</p>
                   <h2
-                    className="font-serif font-bold text-ink mb-6"
+                    className="font-semibold tracking-tight text-ink mb-6"
                     style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
                   >
                     {c.headline}
@@ -66,7 +66,7 @@ const CaseStudies = () => (
                   <p className="eyebrow mb-4">Result strip</p>
                   <ul className="space-y-3">
                     {c.metrics.map((m) => (
-                      <li key={m} className="hairline-t pt-2 font-serif font-bold text-ink text-xl leading-tight">{m}</li>
+                      <li key={m} className="hairline-t pt-2 font-semibold tracking-tight text-ink text-xl leading-tight">{m}</li>
                     ))}
                   </ul>
                 </aside>

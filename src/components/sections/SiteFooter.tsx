@@ -44,7 +44,7 @@ const SiteFooter = () => {
     <footer className="hairline-t bg-ink text-paper relative overflow-hidden">
       <div className="container mx-auto px-5 lg:px-8 pt-20 pb-10 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <p className="font-serif font-bold text-paper text-2xl mb-3">Adnan Khan</p>
+          <p className="font-semibold tracking-tight text-paper text-2xl mb-3">Adnan Khan</p>
           <p className="mono text-paper/70 text-[13px] mb-1">
             Co-Founder, Stitch & Stitch Predict
           </p>

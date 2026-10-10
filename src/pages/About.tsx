@@ -32,7 +32,7 @@ const About = () => (
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
           <div className="col-span-12 lg:col-span-8 space-y-6 text-ink/90 text-[17px] leading-[1.7] max-w-[64ch]">
             {paragraphs.map((p, i) => (
-              <p key={i} className={i === 0 ? "dropcap" : ""}>{p}</p>
+              <p key={i} className={i === 0 ? "" : ""}>{p}</p>
             ))}
 
             <section className="hairline-t pt-6 mt-8">

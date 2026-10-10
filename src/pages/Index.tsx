@@ -80,7 +80,7 @@ const Index = () => (
               className="group hairline-r hairline-b p-6 flex flex-col justify-between min-h-[200px] hover:bg-bone transition-colors"
             >
               <span className="mono text-oxblood">{s.n}</span>
-              <span className="font-serif font-bold text-ink text-[22px] leading-tight group-hover:text-oxblood transition-colors">
+              <span className="font-semibold tracking-tight text-ink text-[22px] leading-tight group-hover:text-oxblood transition-colors">
                 {s.title}
               </span>
             </Link>
@@ -104,7 +104,7 @@ const Index = () => (
               className="group block bg-paper p-6 hairline-t hairline-b hairline-l hairline-r hover:-translate-y-1 transition-transform"
             >
               <p className="eyebrow mb-3">{c.t}</p>
-              <p className="font-serif font-bold text-ink text-[20px] leading-tight group-hover:text-oxblood transition-colors">
+              <p className="font-semibold tracking-tight text-ink text-[20px] leading-tight group-hover:text-oxblood transition-colors">
                 {c.m}
               </p>
               <span className="mono text-sienna mt-6 inline-block">Read →</span>
@@ -124,7 +124,7 @@ const Index = () => (
         <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
           {achievements.map(([k, v]) => (
             <div key={k} className="hairline-t pt-4">
-              <dt className="font-serif font-bold text-oxblood text-5xl mb-2">{k}</dt>
+              <dt className="font-semibold tracking-tight text-oxblood text-5xl mb-2">{k}</dt>
               <dd className="text-ink/85 text-[15px]">{v}</dd>
             </div>
           ))}
@@ -137,13 +137,13 @@ const Index = () => (
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         <a href={SITE.stitch} target="_blank" rel="noopener noreferrer" className="group block hairline-r-0 md:hairline-r p-8">
           <p className="eyebrow mb-3">Co-Founder & Managing Partner</p>
-          <p className="font-serif font-bold text-ink text-5xl group-hover:text-oxblood transition-colors">Stitch</p>
+          <p className="font-semibold tracking-tight text-ink text-5xl group-hover:text-oxblood transition-colors">Stitch</p>
           <p className="text-ink/75 mt-4 text-[15px]">Auckland-based consultancy: media, marketing, advertising and data-driven technology.</p>
           <span className="mono text-oxblood mt-6 inline-block link-underline">stitchtech.co →</span>
         </a>
         <a href={SITE.stitchPredict} target="_blank" rel="noopener noreferrer" className="group block p-8">
           <p className="eyebrow mb-3">Co-Founder</p>
-          <p className="font-serif font-bold text-ink text-5xl group-hover:text-oxblood transition-colors">Stitch Predict</p>
+          <p className="font-semibold tracking-tight text-ink text-5xl group-hover:text-oxblood transition-colors">Stitch Predict</p>
           <p className="text-ink/75 mt-4 text-[15px]">Marketing mix modelling SaaS. Cookieless, privacy-safe causal attribution using ML.</p>
           <span className="mono text-oxblood mt-6 inline-block link-underline">stitchpredict.com →</span>
         </a>
@@ -167,7 +167,7 @@ const Index = () => (
               className="group block bg-bone p-6 hairline-t hairline-b hairline-l hairline-r hover:-translate-y-1 transition-transform"
             >
               <p className="mono text-oxblood text-[12px] mb-3">{p.dateLabel} · {p.kind}</p>
-              <h3 className="font-serif font-bold text-ink text-[22px] leading-tight group-hover:text-oxblood transition-colors">
+              <h3 className="font-semibold tracking-tight text-ink text-[22px] leading-tight group-hover:text-oxblood transition-colors">
                 {p.title}
               </h3>
               <p className="mono mt-4 text-ink/70 text-[12px]">{p.source}</p>

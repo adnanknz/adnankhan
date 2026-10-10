@@ -142,7 +142,7 @@ const SiteLayout = ({ children }: { children: ReactNode }) => (
       <html lang="en-NZ" />
       <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
       <meta httpEquiv="content-language" content="en-NZ" />
-      <meta name="theme-color" content="#6B1F2A" />
+      <meta name="theme-color" content="#FAFAFA" />
       <meta name="author" content="Adnan Khan" />
       <link rel="alternate" hrefLang="en-NZ" href={`${SITE.url}/`} />
       <link rel="alternate" hrefLang="x-default" href={`${SITE.url}/`} />

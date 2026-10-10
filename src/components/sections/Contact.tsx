@@ -112,7 +112,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
           <div className="col-span-12 lg:col-span-5 space-y-10">
-            <p className="font-lede text-ink/85 max-w-[28ch]" style={{ fontSize: "clamp(22px, 2.4vw, 34px)" }}>
+            <p className="text-subtle font-normal leading-snug text-ink/85 max-w-[28ch]" style={{ fontSize: "clamp(22px, 2.4vw, 34px)" }}>
               Reply within 24 hours, usually faster. Auckland based, working globally.
             </p>
             <div className="space-y-3 text-[15px]">
@@ -153,7 +153,7 @@ const Contact = () => {
                 />
                 <div className="pt-8">
                   <MagneticButton type="submit" variant="primary" fullWidth disabled={sending}>
-                    <span className="font-serif font-bold text-[18px] tracking-normal normal-case">
+                    <span className="font-semibold tracking-tight text-[18px] tracking-normal normal-case">
                       {sending ? "Sending…" : "Send →"}
                     </span>
                   </MagneticButton>

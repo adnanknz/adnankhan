@@ -48,7 +48,7 @@ const Hero = () => {
             </span>
           </span>
           <span className="block overflow-hidden">
-            <span data-word className="inline-block text-oxblood italic" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
+            <span data-word className="inline-block text-oxblood" style={{ fontSize: "clamp(44px, 8.6vw, 132px)" }}>
               ambitious brands.
             </span>
           </span>
