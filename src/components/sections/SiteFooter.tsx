@@ -9,6 +9,7 @@ const SiteFooter = () => {
     ["Services", "/services"],
     ["Case Studies", "/casestudies"],
     ["Thinking", "/thinking"],
+    ["Notes", "/notes"],
     ["Contact", "/contact"],
     ["CV", "/cv"],
     ["Now", "/now"],

@@ -9,7 +9,7 @@ import SiteLayout from "@/layouts/SiteLayout";
 /** Page components, supplied lazily on the client and eagerly on the server. */
 export type Pages = Record<
   | "Index" | "About" | "Services" | "Work" | "CaseStudies" | "Thinking" | "ThinkingPost"
-  | "Contact" | "Now" | "Uses" | "CV" | "Notes" | "NotFound",
+  | "Contact" | "Now" | "Uses" | "CV" | "Notes" | "NotePost" | "NotFound",
   ComponentType
 >;
 
@@ -46,6 +46,7 @@ export const AppRoutes = ({ pages: P }: { pages: Pages }) => {
           <Route path="/uses" element={L(P.Uses)} />
           <Route path="/cv" element={L(P.CV)} />
           <Route path="/notes" element={L(P.Notes)} />
+          <Route path="/notes/:slug" element={L(P.NotePost)} />
           <Route path="*" element={L(P.NotFound)} />
         </Routes>
       </Suspense>

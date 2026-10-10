@@ -6,7 +6,7 @@ import ContactSection from "@/components/sections/Contact";
 import { faqs } from "@/data/faqs";
 import { services } from "@/data/services";
 import { caseStudies } from "@/data/caseStudies";
-import { thinkingPosts } from "@/data/thinking";
+import { notes, formatNoteDate } from "@/data/notes";
 import { SITE, yearsExperience } from "@/data/site";
 
 const faqJsonLd = {
@@ -162,23 +162,20 @@ const Index = () => (
           Articles, podcasts, talks.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {thinkingPosts.slice(0, 3).map((p) => (
-            <a
-              key={p.slug}
-              href={p.externalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card group block p-6"
-            >
-              <p className="mono text-oxblood mb-3">{p.dateLabel} · {p.kind}</p>
+          {notes.slice(0, 3).map((n) => (
+            <Link key={n.slug} to={`/notes/${n.slug}`} className="card group block p-6">
+              <p className="mono text-oxblood mb-3">{formatNoteDate(n.date)} · {n.readingTime}</p>
               <h3 className="font-semibold tracking-tight text-ink text-[20px] leading-tight group-hover:text-oxblood transition-colors">
-                {p.title}
+                {n.title}
               </h3>
-              <p className="mono mt-4">{p.source}</p>
-            </a>
+              <p className="text-subtle mt-4 text-[15px]">{n.description}</p>
+            </Link>
           ))}
         </div>
-        <Link to="/thinking" className="mt-8 inline-block link-underline text-ink font-medium text-[15px]">All thinking →</Link>
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          <Link to="/thinking" className="inline-block link-underline text-ink font-medium text-[15px]">All thinking →</Link>
+          <Link to="/notes" className="inline-block link-underline text-ink font-medium text-[15px]">All notes →</Link>
+        </div>
       </div>
     </section>
 

@@ -40,11 +40,11 @@ const ThinkingPost = () => {
             {p.title}
           </h1>
           <p className="text-ink/85 text-[18px] leading-[1.7]">{p.excerpt}</p>
-          <div className="mt-12 hairline-t pt-6">
+          {p.externalUrl && <div className="mt-12 hairline-t pt-6">
             <a href={p.externalUrl} target="_blank" rel="noopener noreferrer" className="link-underline text-oxblood font-medium">
               Open source →
             </a>
-          </div>
+          </div>}
         </div>
       </article>
     </>
