@@ -20,7 +20,7 @@ const FaqSection = () => (
                 {f.q}
               </h3>
             </AccordionTrigger>
-            <AccordionContent className="pb-6">
+            <AccordionContent forceMount className="pb-6 [[data-state=closed]_&]:hidden">
               <p className="text-ink/80 text-[16px] leading-relaxed max-w-[72ch]">{f.a}</p>
             </AccordionContent>
           </AccordionItem>

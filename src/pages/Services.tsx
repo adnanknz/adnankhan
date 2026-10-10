@@ -43,7 +43,16 @@ const Services = () => (
                 </h2>
                 <div className="space-y-4 text-ink/85 text-[17px] leading-[1.65] max-w-[64ch]">
                   <p className="text-ink font-medium">{s.lead}</p>
-                  {s.long.map((p, i) => <p key={i}>{p}</p>)}
+                  {s.long.map((p, i) => (
+                    <p key={i}>
+                      {i === 0 && s.introLink && p.startsWith(s.introLink.label) ? (
+                        <>
+                          <a href={s.introLink.href} target="_blank" rel="noopener noreferrer" className="link-underline text-oxblood">{s.introLink.label}</a>
+                          {p.slice(s.introLink.label.length)}
+                        </>
+                      ) : p}
+                    </p>
+                  ))}
                 </div>
                 <div className="mt-6 max-w-[64ch]">
                   <h3 className="eyebrow mb-3">What's included</h3>
