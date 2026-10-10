@@ -19,7 +19,7 @@ export function verifyPrerender(dist, routes) {
     const canonical = html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/);
     assert.ok(canonical, `${route}: canonical`);
     for (const language of ["en-NZ", "x-default"]) {
-      const tag = [...html.matchAll(/<link\b[^>]*>/g)].find(([value]) => value.includes(`hreflang="${language}"`));
+      const tag = [...html.matchAll(/<link\b[^>]*>/g)].find(([value]) => value.toLowerCase().includes(`hreflang="${language}"`.toLowerCase()));
       assert.ok(tag?.[0].includes(`href="${canonical[1]}"`), `${route}: self-referencing ${language}`);
     }
     if (route.startsWith("/thinking/")) assert.match(html, /name="robots" content="noindex,follow"/);
