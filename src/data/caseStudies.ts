@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     body:
       "During COVID, AA Smartfuel needed a way to keep staff in roles and partner businesses operating. We built a pop-up drive-in cinema in the heart of Auckland in 8 days. Digital media plus offline attribution plus multi-channel marketing automation plus email and two-way SMS nurture, integrating multiple disjointed website and ticketing platforms to measure and optimise against transaction-driven revenue in real time. The result: 8x return on ad spend, 8,000 tickets sold within a fortnight, all tickets sold out with no other marketing, jobs saved, partners kept operating.",
     tag: "Crisis response · real-time optimisation · integration",
-    externalLink: { label: "News article", href: "https://ecommercenews.co.nz/" },
+    externalLink: { label: "Read the eCommerceNews story", href: "https://ecommercenews.co.nz/story/how-3-kiwi-firms-joined-forces-on-marketing-in-a-time-of-crisis" },
     metaTitle: "AA Smartfuel Drive-In Cinema · Case Study | Adnan Khan",
     metaDescription: "Real-time integration and optimisation that turned a COVID pop-up drive-in cinema into an 8x ROAS, sold-out lifeline.",
   },
