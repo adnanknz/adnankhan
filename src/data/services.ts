@@ -4,6 +4,7 @@ export interface Service {
   title: string;
   short: string;
   long: string[];
+  introLink?: { label: string; href: string };
   lead: string;
   included: string[];
   relatedWork: { label: string; href: string }[];
@@ -61,8 +62,9 @@ export const services: Service[] = [
     relatedWork: [{"label": "Stitch Predict", "href": "https://stitchpredict.com"}],
     title: "Marketing mix modelling",
     short: "Stitch Predict: cookieless, privacy-safe causal attribution.",
+    introLink: { label: "Stitch Predict", href: "https://stitchpredict.com" },
     long: [
-      "Stitch Predict (https://stitchpredict.com). Cookieless, privacy-safe causal attribution using ML. Models take 6 to 10 weeks to deploy, with ±6 to 10% variance, on 2 to 3 years of weekly variable data.",
+      "Stitch Predict. Cookieless, privacy-safe causal attribution using ML. Models take 6 to 10 weeks to deploy, with ±6 to 10% variance, on 2 to 3 years of weekly variable data.",
     ],
   },
 ];
