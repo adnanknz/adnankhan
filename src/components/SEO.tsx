@@ -23,7 +23,7 @@ const SEO = ({
   breadcrumbs,
 }: Props) => {
   const url = SITE.url + path;
-  const image = ogImage ?? `${SITE.url}/og${path === "/" ? "/home" : path}.jpg`;
+  const image = ogImage ?? `${SITE.url}/og-image.jpg`;
 
   const allLd: Record<string, any>[] = [...jsonLd];
   if (breadcrumbs && breadcrumbs.length) {

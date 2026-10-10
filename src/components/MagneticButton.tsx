@@ -1,4 +1,5 @@
 import { useRef, MouseEvent, ReactNode, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 type Props = {
@@ -56,6 +57,18 @@ const MagneticButton = ({
   const cls = `${base} ${styles} ${fullWidth ? "w-full" : ""} ${className}`;
 
   if (href) {
+    if (href.startsWith("/")) {
+      return (
+        <Link
+          ref={ref as React.RefObject<HTMLAnchorElement>}
+          to={href}
+          onClick={(e: MouseEvent) => onClick?.()}
+          className={cls}
+        >
+          {children}
+        </Link>
+      );
+    }
     return (
       <a
         ref={ref as React.RefObject<HTMLAnchorElement>}
