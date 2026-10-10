@@ -28,7 +28,6 @@ const Contact = () => (
             ["EMAIL", SITE.email, `mailto:${SITE.email}`, false],
             ["PHONE", SITE.phone, `tel:${SITE.phoneTel}`, false],
             ["LINKEDIN", "linkedin.com/in/adnan2", SITE.linkedin, true],
-            ["FACEBOOK", "facebook.com/khan", SITE.facebook, true],
             ["STITCH", "stitchtech.co", SITE.stitch, true],
             ["STITCH PREDICT", "stitchpredict.com", SITE.stitchPredict, true],
           ].map(([k, v, h, ext]) => (

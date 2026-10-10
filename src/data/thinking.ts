@@ -41,13 +41,13 @@ export const thinkingPosts: ThinkingPost[] = [
   },
   {
     slug: "iab-q1-2026-ai-tools-tracker",
-    title: "Q1 2026 AI Tools Tracker",
+    title: "IAB NZ AI Tools Tracker",
     date: "2026-01-10",
     dateLabel: "Q1 2026",
     source: "IAB NZ",
     kind: "Report",
-    excerpt: "Contributor.",
-    externalUrl: "https://www.iab.org.nz/news-resources/q1-2026-ai-tools-tracker",
+    excerpt: "Contributor to the Q1 2026 edition. IAB NZ now publishes the tracker quarterly.",
+    externalUrl: "https://www.iab.org.nz/news-resources/q3-2026-ai-tools-tracker",
   },
   {
     slug: "iab-q4-2025-ai-tools-report",
@@ -62,8 +62,8 @@ export const thinkingPosts: ThinkingPost[] = [
   {
     slug: "ma-digital-day-out-2025",
     title: "AI panel: Digital Day Out 2025",
-    date: "2025-09-01",
-    dateLabel: "2025",
+    date: "2025-07-15",
+    dateLabel: "15 Jul 2025",
     source: "Marketing Association NZ · Cordis Auckland",
     kind: "Talk",
     excerpt: "Moderator, AI panel at Digital Day Out 2025.",

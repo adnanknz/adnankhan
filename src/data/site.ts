@@ -15,7 +15,6 @@ export const SITE = {
     country: "NZ",
   },
   linkedin: "https://www.linkedin.com/in/adnan2/",
-  facebook: "https://www.facebook.com/khan",
   stitch: "https://stitchtech.co",
   stitchPredict: "https://stitchpredict.com",
   imanz: "https://www.imanz.co.nz/our-agencies/stitch",
