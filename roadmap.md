@@ -1,5 +1,6 @@
-- [ ] Correct per-page SEO and structured data; preserve prerendering.
-- [ ] Expand FAQ and data-driven services using supplied facts.
-- [ ] Update AI discovery files, Now page and indexable sitemap.
-- [ ] Remove GSAP, Lenis and unused Splitting; preserve reveals and styling.
-- [ ] Verify rendered HTML, JSON-LD, punctuation and bundle sizes.
+- [x] Correct per-page SEO and structured data; preserve prerendering.
+- [x] Expand FAQ and data-driven services using supplied facts.
+- [x] Update AI discovery files, Now page and indexable sitemap.
+- [x] Remove GSAP, Lenis and unused Splitting; preserve reveals and styling.
+- [x] Verify all 22 routes with server rendering: 12 FAQs, 5 Service schemas, ProfilePage, thinking noindex, 152 valid JSON-LD blocks, unique title/description, matching alternates and zero em dashes; test suite and browser checks pass.
+- [ ] Measure the emitted after-change main JS bundle and inspect full production dist: blocked because automatic builds do not expose dist/dist-server in this sandbox and hosted preview requires authentication; published baseline is 560,986 bytes (182,039 gzip), and production prerender now reports verification and bundle size automatically.
