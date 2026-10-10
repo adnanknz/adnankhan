@@ -196,7 +196,7 @@ Related work:
 Adnan Khan is Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict, both based in Auckland, New Zealand. He has 19+ years in digital transformation, customer data, marketing technology, and AI, including senior roles at Meta (Facebook) and Microsoft. He is the IAB NZ AI Working Group Lead and Chair of the Marketing Association Digital SIG.
 
 ### What does Stitch do?
-Stitch is an Auckland-based consultancy specialising in media, marketing, advertising, and data-driven technology. It builds customer data platforms, marketing automation, advanced measurement, and AI workflows for NZ and global brands including Mr Apple, Comvita, Turners, AA Smartfuel, BNZ, Bayleys and more.
+Stitch is an Auckland-based consultancy specialising in media, marketing, advertising, and data-driven technology. It builds customer data platforms, marketing automation, advanced measurement, and AI workflows for NZ and global brands including Turners, Tourism New Zealand, Mr Apple, World Vision New Zealand, Serko, RealNZ, Comvita, AA Smartfuel, BNZ and Bayleys.
 
 ### What is Stitch Predict?
 Stitch Predict is a marketing mix modelling SaaS platform co-founded by Adnan Khan and Simon Wedde in 2023. It isolates the causal impact of each marketing activity on business outcomes using large data and machine learning, with no reliance on cookies or device tracking.
