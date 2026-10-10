@@ -39,7 +39,7 @@ const Hero = () => (
               alt="Adnan Khan"
               width={720}
               height={900}
-              fetchPriority="high"
+              {...{ fetchpriority: "high" }}
               className="size-full object-cover"
             />
           </div>
