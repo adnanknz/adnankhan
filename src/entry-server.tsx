@@ -14,17 +14,20 @@ import Now from "./pages/Now";
 import Uses from "./pages/Uses";
 import CV from "./pages/CV";
 import Notes from "./pages/Notes";
+import NotePost from "./pages/NotePost";
+import { notes } from "./data/notes";
 import NotFound from "./pages/NotFound";
 import { thinkingPosts } from "./data/thinking";
 
 const pages: Pages = {
   Index, About, Services, Work, CaseStudies, Thinking, ThinkingPost,
-  Contact, Now, Uses, CV, Notes, NotFound,
+  Contact, Now, Uses, CV, Notes, NotePost, NotFound,
 };
 
 export const routes = [
   "/", "/about", "/work", "/services", "/casestudies", "/thinking", "/contact",
   "/now", "/uses", "/cv", "/notes",
+  ...notes.map((n) => `/notes/${n.slug}`),
   ...thinkingPosts.map((p) => `/thinking/${p.slug}`),
 ];
 

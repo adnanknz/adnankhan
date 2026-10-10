@@ -93,6 +93,20 @@ World's first global integrated digital transformation, marketing automation, di
 - Co-author of IAB NZ's "Zero, First, Second, Third: A Plain-English Guide to Data for Everyone" (2026)
 - Author of "The Dual Approach to Analytics Tracking: Client-Side & Server-Side" (Marketing Association NZ, 15 October 2023)
 - Industry panellist at the University of Auckland BUSMGT 719 course
+- Author of "Utilising Generative AI and Customer Data for Enhanced Personalisation" (Marketing Association NZ, 18 December 2023)
+- Author of "Stitch Campaign Brief Template" (Marketing Association NZ, 13 June 2022)
+- Author of "New Tech: Signal Loss Prevention and Cookie Extension" (Marketing Association NZ, 1 June 2022)
+
+## Notes (essays)
+- Most NZ brands don't need a CDP yet. Fix these four things first.
+  URL: https://adnan.co.nz/notes/do-you-need-a-cdp
+  A customer data platform amplifies whatever data you feed it. Here are the four foundations to fix first, and the signs you're ready for a CDP.
+- MMM vs attribution: what marketing mix modelling tells you that last-click never will
+  URL: https://adnan.co.nz/notes/mmm-vs-attribution
+  Attribution shows which touchpoint was nearest a sale. Marketing mix modelling estimates what actually caused it. What MMM tells you, what it doesn't, and what to ask before you trust one.
+- Your AI personalisation is only as good as your customer data
+  URL: https://adnan.co.nz/notes/genai-personalisation-customer-data
+  Generative AI makes personalisation at scale possible, but only if the customer data underneath is unified, accurate and governed. What customer data infrastructure needs to look like.
 
 ## Verified profiles (sameAs)
 - https://www.linkedin.com/in/adnan2/

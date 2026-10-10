@@ -23,6 +23,7 @@
 - [Now](https://adnan.co.nz/now): Current focus and industry work.
 - [CV](https://adnan.co.nz/cv): Career timeline, education and certifications.
 - [Uses](https://adnan.co.nz/uses): Hardware, software, AI tools and martech stack.
+- [Notes](https://adnan.co.nz/notes): Long-form essays on AI, measurement and the martech stack.
 - [Full profile](https://adnan.co.nz/llms-full.txt): Detailed biography, services and twelve FAQ answers.
 - [Contact](https://adnan.co.nz/contact): Contact details and form.
 
@@ -43,3 +44,8 @@
 - 5th Facebook employee in APAC; first Account Manager in Facebook APAC.
 - Co-Founder of Stitch (2019) and Stitch Predict (2023).
 - IAB NZ AI Working Group Lead.
+
+## Notes
+- [Most NZ brands don't need a CDP yet. Fix these four things first.](https://adnan.co.nz/notes/do-you-need-a-cdp): A customer data platform amplifies whatever data you feed it. Here are the four foundations to fix first, and the signs you're ready for a CDP.
+- [MMM vs attribution: what marketing mix modelling tells you that last-click never will](https://adnan.co.nz/notes/mmm-vs-attribution): Attribution shows which touchpoint was nearest a sale. Marketing mix modelling estimates what actually caused it. What MMM tells you, what it doesn't, and what to ask before you trust one.
+- [Your AI personalisation is only as good as your customer data](https://adnan.co.nz/notes/genai-personalisation-customer-data): Generative AI makes personalisation at scale possible, but only if the customer data underneath is unified, accurate and governed. What customer data infrastructure needs to look like.

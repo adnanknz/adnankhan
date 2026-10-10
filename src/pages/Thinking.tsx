@@ -2,6 +2,13 @@ import SEO from "@/components/SEO";
 import { SITE } from "@/data/site";
 import { thinkingPosts } from "@/data/thinking";
 
+const Row = ({ href, className, children }: { href?: string; className: string; children: React.ReactNode }) =>
+  href ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{children}</a>
+  ) : (
+    <div className={className}>{children}</div>
+  );
+
 const yearOf = (iso: string) => iso.slice(0, 4);
 
 const Thinking = () => {
@@ -37,12 +44,7 @@ const Thinking = () => {
                 <ul className="hairline-t">
                   {grouped[y].map((p) => (
                     <li key={p.slug} className="hairline-b">
-                      <a
-                        href={p.externalUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group grid grid-cols-12 gap-x-6 py-6 items-baseline"
-                      >
+                      <Row href={p.externalUrl} className="group grid grid-cols-12 gap-x-6 py-6 items-baseline">
                         <span className="mono col-span-12 lg:col-span-2 text-oxblood">{p.dateLabel}</span>
                         <span className="col-span-12 lg:col-span-7 font-semibold tracking-tight text-ink group-hover:text-oxblood transition-colors text-[20px] lg:text-[24px] leading-snug">
                           {p.title}
@@ -50,7 +52,7 @@ const Thinking = () => {
                         <span className="mono col-span-12 lg:col-span-3 lg:text-right text-ink/70">
                           {p.kind} · {p.source}
                         </span>
-                      </a>
+                      </Row>
                     </li>
                   ))}
                 </ul>

@@ -6,7 +6,7 @@ export interface ThinkingPost {
   source: string;
   kind: "Talk" | "Article" | "Podcast" | "Report" | "Panel";
   excerpt: string;
-  externalUrl: string;
+  externalUrl?: string;
 }
 
 export const thinkingPosts: ThinkingPost[] = [
@@ -38,7 +38,6 @@ export const thinkingPosts: ThinkingPost[] = [
     source: "University of Auckland",
     kind: "Panel",
     excerpt: "Industry panellist for the Business Technology postgraduate course.",
-    externalUrl: "https://www.auckland.ac.nz/",
   },
   {
     slug: "iab-q1-2026-ai-tools-tracker",
@@ -111,6 +110,16 @@ export const thinkingPosts: ThinkingPost[] = [
     externalUrl: "https://podcasts.apple.com/nz/podcast/marketing-master-adnan-khan-speaks-with-zania-guy/id1731231116?i=1000656575942",
   },
   {
+    slug: "ma-genai-customer-data-personalisation-2023",
+    title: "Utilising Generative AI and Customer Data for Enhanced Personalisation",
+    date: "2023-12-18",
+    dateLabel: "18 Dec 2023",
+    source: "Marketing Association NZ",
+    kind: "Article",
+    excerpt: "Why customer data infrastructure decides whether AI personalisation works.",
+    externalUrl: "https://marketing.org.nz/resource-hub/utilising-generative-ai-and-customer-data-for-enhanced-personalisation",
+  },
+  {
     slug: "ma-dual-approach-analytics-tracking-2023",
     title: "The Dual Approach to Analytics Tracking: Client-Side & Server-Side",
     date: "2023-10-15",
@@ -119,6 +128,26 @@ export const thinkingPosts: ThinkingPost[] = [
     kind: "Article",
     excerpt: "Why modern analytics needs both client-side and server-side tracking.",
     externalUrl: "https://marketing.org.nz/resource-hub/data/dual-approach-analytics-tracking-client-side-server-side",
+  },
+  {
+    slug: "ma-campaign-brief-template-2022",
+    title: "Stitch Campaign Brief Template",
+    date: "2022-06-13",
+    dateLabel: "13 Jun 2022",
+    source: "Marketing Association NZ",
+    kind: "Article",
+    excerpt: "A campaign brief template that ties business objectives to marketing deliverables.",
+    externalUrl: "https://marketing.org.nz/resource-hub/marketing-planning/stitch-campaign-brief-template",
+  },
+  {
+    slug: "ma-signal-loss-prevention-2022",
+    title: "New Tech: Signal Loss Prevention and Cookie Extension",
+    date: "2022-06-01",
+    dateLabel: "1 Jun 2022",
+    source: "Marketing Association NZ",
+    kind: "Article",
+    excerpt: "How iOS changes, short-lived cookies and ad blockers cause signal loss, and the tech fixing it.",
+    externalUrl: "https://marketing.org.nz/resource-hub/digital-marketing/signal-loss-prevention-and-cookie-extension",
   },
 ];
 

@@ -15,6 +15,7 @@ const pages: Pages = {
   ThinkingPost: lazy(() => import("./pages/ThinkingPost.tsx")),
   Contact: lazy(() => import("./pages/Contact.tsx")),
   Notes: lazy(() => import("./pages/Notes.tsx")),
+  NotePost: lazy(() => import("./pages/NotePost.tsx")),
   Now: lazy(() => import("./pages/Now.tsx")),
   Uses: lazy(() => import("./pages/Uses.tsx")),
   CV: lazy(() => import("./pages/CV.tsx")),
