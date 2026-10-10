@@ -4,7 +4,7 @@ import SEO from "@/components/SEO";
 
 const NotFound = () => (
   <>
-    <SEO title="Not found · Adnan Khan" description="The page you were looking for doesn't exist." path="/404" />
+    <SEO title="Not found | Adnan Khan" description="The page you were looking for doesn't exist." path="/404" />
     <Helmet>
       <meta name="robots" content="noindex" />
     </Helmet>

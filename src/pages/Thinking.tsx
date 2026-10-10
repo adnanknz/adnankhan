@@ -15,7 +15,7 @@ const Thinking = () => {
   return (
     <>
       <SEO
-        title="Thinking — Adnan Khan"
+        title="Talks, Reports & Articles on AI and Marketing | Adnan Khan"
         description="Articles, podcasts and talks on AI, marketing mix modelling, customer data, and the future of measurement. Plus IAB NZ AI Working Group outputs."
         path="/thinking"
         breadcrumbs={[

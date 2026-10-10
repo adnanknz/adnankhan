@@ -14,9 +14,17 @@ const paragraphs = [
 const About = () => (
   <>
     <SEO
-      title="About Adnan Khan — Co-Founder, Stitch & Stitch Predict"
+      title="About Adnan Khan | Co-Founder, Stitch & Stitch Predict"
       description="5th Facebook employee in APAC, ex-Microsoft, Founding Partner krunch.co. Co-Founder of Stitch and Stitch Predict. Chair, MA Digital SIG."
       path="/about"
+      jsonLd={[{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": `${SITE.url}/about#profile`,
+        url: `${SITE.url}/about`,
+        mainEntity: { "@id": `${SITE.url}/#person` },
+        dateModified: "2026-10-10",
+      }]}
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
         { name: "About", url: `${SITE.url}/about` },
@@ -55,8 +63,8 @@ const About = () => (
             <section className="hairline-t pt-6">
               <p className="eyebrow mb-3">Recent recognition</p>
               <p>
-                TVNZ Marketing Awards 2022 — Supreme Award Winner, Excellence in Brand Transformation Strategy, and
-                Excellence in Consumer Products & Services Strategy. 2x Gold Effie 2022 (Strategic Thinking, Retail).
+                TVNZ Marketing Awards 2022: Supreme Award Winner, Excellence in Brand Transformation Strategy, and
+                Excellence in Consumer Products & Services Strategy. Three Gold Effies (including 2022 Strategic Thinking and 2022 Retail).
                 Global Effie Finalist 2023.
               </p>
             </section>

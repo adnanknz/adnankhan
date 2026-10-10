@@ -9,6 +9,7 @@ interface Props {
   path: string; // route, e.g. "/about"
   ogType?: "website" | "article" | "profile";
   ogImage?: string;
+  robots?: string;
   jsonLd?: Record<string, any>[];
   breadcrumbs?: Crumb[];
 }
@@ -19,6 +20,7 @@ const SEO = ({
   path,
   ogType = "website",
   ogImage,
+  robots,
   jsonLd = [],
   breadcrumbs,
 }: Props) => {
@@ -44,6 +46,9 @@ const SEO = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
+      <link rel="alternate" hrefLang="en-NZ" href={url} />
+      <link rel="alternate" hrefLang="x-default" href={url} />
+      {robots && <meta name="robots" content={robots} />}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />

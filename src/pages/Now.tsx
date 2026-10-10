@@ -4,9 +4,18 @@ import { SITE } from "@/data/site";
 const Now = () => (
   <>
     <SEO
-      title="Now — Adnan Khan"
+      title="Now | Adnan Khan"
       description="What Adnan Khan is focused on right now. Stitch Predict, IAB NZ AI Working Group, MA Digital SIG, NZ and global brands."
       path="/now"
+      jsonLd={[{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${SITE.url}/now#webpage`,
+        url: `${SITE.url}/now`,
+        name: "Now | Adnan Khan",
+        dateModified: "2026-10-10",
+        author: { "@id": `${SITE.url}/#person` },
+      }]}
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
         { name: "Now", url: `${SITE.url}/now` },
@@ -18,6 +27,7 @@ const Now = () => (
         <h1 className="font-display-1 text-ink mb-12" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
           Now.
         </h1>
+        <p className="mono text-subtle mb-6">Last updated: <time dateTime="2026-10-10">10 October 2026</time></p>
         <p className="text-ink/85 text-[18px] leading-[1.7] mb-8">
           Right now I'm focused on scaling Stitch Predict, leading the IAB NZ AI Working Group,
           chairing the MA Digital SIG, and helping a small group of NZ and global brands navigate

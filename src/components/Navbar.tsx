@@ -38,7 +38,7 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto flex h-16 items-center justify-between">
-          <Link to="/" className="text-[17px] font-semibold tracking-tight text-ink" aria-label="Adnan Khan — home">
+          <Link to="/" className="text-[17px] font-semibold tracking-tight text-ink" aria-label="Adnan Khan: home">
             Adnan Khan
           </Link>
 
