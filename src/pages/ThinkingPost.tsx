@@ -20,10 +20,11 @@ const ThinkingPost = () => {
   return (
     <>
       <SEO
-        title={`${p.title} · Adnan Khan`}
+        title={`${p.title} | Adnan Khan`}
         description={p.excerpt}
         path={`/thinking/${p.slug}`}
         ogType="article"
+        robots="noindex,follow"
         jsonLd={[articleLd]}
         breadcrumbs={[
           { name: "Home", url: `${SITE.url}/` },

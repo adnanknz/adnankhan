@@ -21,7 +21,7 @@ const roles: [string, string][] = [
 const CV = () => (
   <>
     <SEO
-      title="CV — Adnan Khan"
+      title="CV | Adnan Khan"
       description="Full career timeline of Adnan Khan: Stitch, Stitch Predict, krunch.co, Meta, Microsoft, Initiative Media. Plus education and certifications."
       path="/cv"
       breadcrumbs={[

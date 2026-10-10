@@ -6,6 +6,7 @@ const articleLd = (c: typeof caseStudies[number]) => ({
   "@context": "https://schema.org",
   "@type": "Article",
   headline: c.headline,
+  image: `${SITE.url}/og-image.jpg`,
   about: c.client,
   keywords: c.tag,
   author: { "@id": `${SITE.url}/#person` },
@@ -16,7 +17,7 @@ const articleLd = (c: typeof caseStudies[number]) => ({
 const CaseStudies = () => (
   <>
     <SEO
-      title="Case Studies — Adnan Khan"
+      title="Martech & Marketing Case Studies | Adnan Khan"
       description="Comvita 480% lead conversion. AA Smartfuel 8x ROAS. Turners 2x Gold Effie + TVNZ Supreme. Mr Apple 150% database growth. Cisco world-first integration."
       path="/casestudies"
       jsonLd={caseStudies.map(articleLd)}

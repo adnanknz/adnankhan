@@ -10,13 +10,19 @@ const personLd = {
   "@type": "Person",
   "@id": `${SITE.url}/#person`,
   name: "Adnan Khan",
+  description: "Adnan Khan is an Auckland-based digital transformation, AI and marketing consultant, Co-Founder and Managing Partner of Stitch and Co-Founder of Stitch Predict.",
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Co-Founder and Managing Partner",
+    occupationLocation: { "@type": "City", name: "Auckland" },
+  },
   givenName: "Adnan",
   familyName: "Khan",
   jobTitle: "Co-Founder & Managing Partner, Stitch | Co-Founder, Stitch Predict",
   email: `mailto:${SITE.email}`,
   telephone: SITE.phoneTel,
   url: `${SITE.url}/`,
-  image: `${SITE.url}/og-image.jpg`,
+  image: `${SITE.url}/adnan-khan-headshot.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: "Ground Floor, 295 Parnell Road",
@@ -39,13 +45,14 @@ const personLd = {
     { "@type": "Organization", name: "IMANZ", url: "https://www.imanz.co.nz/" },
   ],
   award: [
-    "TVNZ Marketing Awards 2022 — Supreme Award Winner",
-    "TVNZ Marketing Awards 2022 — Excellence in Brand Transformation Strategy",
-    "TVNZ Marketing Awards 2022 — Excellence in Consumer Products & Services Strategy",
-    "Gold Effie 2022 — Strategic Thinking",
-    "Gold Effie 2022 — Retail",
+    "Gold Effie (three in total)",
+    "TVNZ Marketing Awards 2022: Supreme Award Winner",
+    "TVNZ Marketing Awards 2022: Excellence in Brand Transformation Strategy",
+    "TVNZ Marketing Awards 2022: Excellence in Consumer Products & Services Strategy",
+    "Gold Effie 2022: Strategic Thinking",
+    "Gold Effie 2022: Retail",
     "Global Effie Finalist 2023",
-    "LinkedIn Top Voice — Digital Marketing",
+    "LinkedIn Top Voice: Digital Marketing",
   ],
   knowsAbout: [
     "Digital Transformation",
@@ -132,7 +139,7 @@ const websiteLd = {
   "@id": `${SITE.url}/#website`,
   url: `${SITE.url}/`,
   name: "Adnan Khan",
-  description: "Digital transformation, AI and marketing consultant — Auckland, New Zealand.",
+  description: "Digital transformation, AI and marketing consultant: Auckland, New Zealand.",
   publisher: { "@id": `${SITE.url}/#person` },
   inLanguage: "en-NZ",
 };
@@ -167,8 +174,6 @@ const SiteLayout = ({ children }: { children: ReactNode }) => {
       <meta httpEquiv="content-language" content="en-NZ" />
       <meta name="theme-color" content="#FAFAFA" />
       <meta name="author" content="Adnan Khan" />
-      <link rel="alternate" hrefLang="en-NZ" href={`${SITE.url}/`} />
-      <link rel="alternate" hrefLang="x-default" href={`${SITE.url}/`} />
       <script type="application/ld+json">{JSON.stringify(personLd)}</script>
       <script type="application/ld+json">{JSON.stringify(stitchLd)}</script>
       <script type="application/ld+json">{JSON.stringify(stitchPredictLd)}</script>

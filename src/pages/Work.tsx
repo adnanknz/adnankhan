@@ -5,7 +5,7 @@ import { stitchClients, krunchClients } from "@/data/clients";
 const Work = () => (
   <>
     <SEO
-      title="Work — Adnan Khan"
+      title="Clients & Selected Work | Adnan Khan, Auckland"
       description={`${yearsExperience()} years of martech, customer data, AI and media work for Comvita, Cisco, AA Smartfuel, Turners, Mr Apple, BNZ, Bayleys, Hyundai and Toyota.`}
       path="/work"
       breadcrumbs={[

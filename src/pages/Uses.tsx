@@ -32,7 +32,7 @@ const sections: [string, string[]][] = [
 const Uses = () => (
   <>
     <SEO
-      title="Uses — Adnan Khan"
+      title="Uses | Adnan Khan"
       description="The hardware, software, AI tools and martech stack Adnan Khan uses every day."
       path="/uses"
       breadcrumbs={[

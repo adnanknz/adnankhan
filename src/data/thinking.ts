@@ -52,7 +52,7 @@ export const thinkingPosts: ThinkingPost[] = [
   },
   {
     slug: "ma-digital-day-out-2025",
-    title: "AI panel — Digital Day Out 2025",
+    title: "AI panel: Digital Day Out 2025",
     date: "2025-09-01",
     dateLabel: "2025",
     source: "Marketing Association NZ · Cordis Auckland",
@@ -82,7 +82,7 @@ export const thinkingPosts: ThinkingPost[] = [
   },
   {
     slug: "marketing-master-zania-guy-2024",
-    title: "Marketing Master — Adnan Khan with Zania Guy",
+    title: "Marketing Master: Adnan Khan with Zania Guy",
     date: "2024-05-24",
     dateLabel: "24 May 2024",
     source: "Marketing Masters podcast · S1E5",

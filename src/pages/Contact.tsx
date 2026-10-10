@@ -5,7 +5,7 @@ import ContactForm from "@/components/sections/Contact";
 const Contact = () => (
   <>
     <SEO
-      title="Contact Adnan Khan — Auckland, New Zealand"
+      title="Contact Adnan Khan | Auckland, New Zealand"
       description="Email adnan.khan@me.com. Phone +64 27 513 0110. Auckland-based. Available for digital transformation, AI strategy, martech, MMM, and advisory work."
       path="/contact"
       breadcrumbs={[

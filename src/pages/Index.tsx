@@ -45,7 +45,7 @@ const teaserCases = [
 const Index = () => (
   <>
     <SEO
-      title="Adnan Khan — AI & Marketing Consultant in Auckland"
+      title="Adnan Khan | AI & Marketing Consultant in Auckland"
       description={`Co-Founder of Stitch and Stitch Predict. ${yearsExperience()}+ years across Meta and Microsoft. Helping NZ and global brands grow with AI, data, and martech.`}
       path="/"
       jsonLd={[faqJsonLd]}

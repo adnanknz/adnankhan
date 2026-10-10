@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 
 const Notes = () => (
   <>
-    <Helmet>
-      <title>Notes · Adnan Khan</title>
-      <meta name="robots" content="noindex" />
-    </Helmet>
+    <SEO title="Notes | Adnan Khan" description="Long-form essays on AI, measurement, and the marketing technology stack. Coming soon." path="/notes" robots="noindex" />
     <section className="min-h-[80vh] flex items-center pt-32 pb-24">
       <div className="container mx-auto max-w-3xl">
         <p className="eyebrow mb-6">Notes</p>
