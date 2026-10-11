@@ -2,7 +2,7 @@ export const SITE = {
   url: "https://adnan.co.nz",
   name: "Adnan Khan",
   careerStart: 2007,
-  email: "adnan.khan@me.com",
+  email: "adnan@adnan.co.nz",
   phone: "+64 27 513 0110",
   phoneTel: "+64275130110",
   city: "Auckland",

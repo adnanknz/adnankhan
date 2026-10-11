@@ -91,7 +91,7 @@ const Contact = () => {
     } catch {
       toast({
         title: "Something went wrong",
-        description: "Please email adnan.khan@me.com directly.",
+        description: "Please email adnan@adnan.co.nz directly.",
         variant: "destructive",
       });
     } finally {
@@ -117,7 +117,7 @@ const Contact = () => {
             </p>
             <div className="space-y-3 text-[15px]">
               {[
-                ["EMAIL", "adnan.khan@me.com", "mailto:adnan.khan@me.com"],
+                ["EMAIL", "adnan@adnan.co.nz", "mailto:adnan@adnan.co.nz"],
                 ["PHONE", "+64 27 513 0110", "tel:+64275130110"],
                 ["LINKEDIN", "linkedin.com/in/adnan2", "https://linkedin.com/in/adnan2"],
               ].map(([k, v, h]) => (
