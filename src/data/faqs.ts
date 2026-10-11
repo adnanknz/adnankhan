@@ -17,7 +17,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "How can I contact Adnan?",
-    a: "Email adnan.khan@me.com, phone +64 27 513 0110, or message him on LinkedIn at https://www.linkedin.com/in/adnan2/.",
+    a: "Email adnan@adnan.co.nz, phone +64 27 513 0110, or message him on LinkedIn at https://www.linkedin.com/in/adnan2/.",
   },
   {
     q: "Where is Adnan based?",

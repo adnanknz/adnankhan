@@ -6,7 +6,7 @@ const Contact = () => (
   <>
     <SEO
       title="Contact Adnan Khan | Auckland, New Zealand"
-      description="Email adnan.khan@me.com. Phone +64 27 513 0110. Auckland-based. Available for digital transformation, AI strategy, martech, MMM, and advisory work."
+      description="Email adnan@adnan.co.nz. Phone +64 27 513 0110. Auckland-based. Available for digital transformation, AI strategy, martech, MMM, and advisory work."
       path="/contact"
       breadcrumbs={[
         { name: "Home", url: `${SITE.url}/` },
